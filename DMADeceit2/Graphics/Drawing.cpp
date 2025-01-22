@@ -6,7 +6,7 @@ ID2D1GradientStopCollection* GradientStops = NULL;
 
 std::map<std::wstring, IDWriteTextLayout*> TextCache;
 
-void DrawText(int x, int y, std::wstring text, std::string font, int fontsize, MyColour colour, FontAlignment alignment)
+void DrawText(int x, int y, std::wstring text, std::string font, int fontsize, MyColour colour, FontAlignment alignment) // draw text
 {
 	Brush->SetColor(colour.Get());
 
