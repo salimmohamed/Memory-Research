@@ -7,25 +7,25 @@ class Engine
 {
 
 private:
-	uint64_t OwningActorOffset = 0xA0; // UNetConnection -> OwningActor //DONE
-	uint64_t MaxPacketOffset = 0xA8; // UNetConnection -> MaxPacket //DONE
+	uint64_t OwningActorOffset = 0x98; // UNetConnection -> OwningActor // DONE
+	uint64_t MaxPacketOffset = 0xA0; // UNetConnection -> MaxPacket // DONE
 	uint64_t OwningActor;
 	uint64_t MaxPacket;
 	uint64_t OwningGameInstance = 0x1D8; // World -> OwningGameInstance // DONE
-	uint64_t PersistentLevel = 0x30; // World  -> PersistentLevel //DONE
-	uint64_t GWorld = 0x09537EC8; // DONE
-	uint64_t LocalPlayers = 0x38; // GameInstance -> LocalPlayers //DONE
-	uint64_t PlayerController = 0x30; // Player -> PlayerController //DONE
-	uint64_t AcknowledgedPawn = 0x338; // PlayerController  -> AcknowledgedPawn //DONE
+	uint64_t PersistentLevel = 0x30; // World  -> PersistentLevel // DONE
+	uint64_t GWorld = 0x09D5B1C8; // 
+	uint64_t LocalPlayers = 0x38; // GameInstance -> LocalPlayers // DONE
+	uint64_t PlayerController = 0x30; // Player -> PlayerController // DONE
+	uint64_t AcknowledgedPawn = 0x350; // PlayerController  -> AcknowledgedPawn // DONE
 
 
-	uint64_t CameraManager = 0x348; // PlayerController -> PlayerCameraManager //DONE
-	uint64_t CameraCachePrivate = 0x0; // PlayerCameraManager -> CameraCachePrivate //DONE
-	uint64_t CameraCachePrivateOffset = 0x1390; // PlayerCameraManager -> CameraCachePrivate //DONE
+	uint64_t CameraManager = 0x360; // PlayerController -> PlayerCameraManager // DONE
+	uint64_t CameraCachePrivate = 0x0; // PlayerCameraManager -> CameraCachePrivate // DONE 
+	uint64_t CameraCachePrivateOffset = 0x1410; // PlayerCameraManager -> CameraCachePrivate // DONE
 
 
-	CameraCacheEntry CameraEntry; // ScriptStruct Engine.CameraCacheEntry //DONE
-	MinimalViewInfo CameraViewInfo; // ScriptStruct Engine.MinimalViewInfo //DONE
+	CameraCacheEntry CameraEntry; // ScriptStruct Engine.CameraCacheEntry //
+	MinimalViewInfo CameraViewInfo; // ScriptStruct Engine.MinimalViewInfo //
 	std::vector<std::shared_ptr<ActorEntity>> Actors;
 public:
 	Engine();

@@ -35,7 +35,7 @@ private:
 
 	/**
 	* brief Removes basic information related to the FPGA device
-	* This is required before any DMA operations can be done.
+	* This is required before any DMA operations can be .
 	* To ensure the optimal safety in game cheating.
 	* @return true if successful, false if not.
 	*/
@@ -56,7 +56,7 @@ public:
 
 	/**
 	* brief Initializes the DMA
-	* This is required before any DMA operations can be done.
+	* This is required before any DMA operations can be .
 	* @param process_name the name of the process
 	* @param memMap if true, will dump the memory map to a file	& make the DMA use it.
 	* @return true if successful, false if not.
@@ -141,7 +141,7 @@ public:
 	 */
 	bool DumpMemory(uintptr_t address, std::string path);
 
-	/*This part is where all memory operations are done, such as read, write.*/
+	/*This part is where all memory operations are , such as read, write.*/
 
 	/**
 	 * \brief Scans the process for the signature.
