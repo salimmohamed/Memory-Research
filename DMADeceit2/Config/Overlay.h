@@ -10,8 +10,8 @@ public:
         ConfigName = name;
     }
     bool OverrideResolution = false;
-    int Width = 1920;
-    int Height = 1080;
+    int Width = 2560;
+    int Height = 1440;
     void ToJsonColour(json* j, const std::string& name, D2D1::ColorF* colour)
     {
         (*j)[ConfigName][name][LIT("r")] = colour->r;
