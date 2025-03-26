@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Solution",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                "C:\\Dev\\Deceit 2 Dma\\DMADeceit2.sln",  // Add full path to solution file
+                "/p:Configuration=Debug",  // Change to Release if needed
+                "/m",  // Use multiple cores for faster build
+                "/property:GenerateFullPaths=true",
+                "/t:build",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
