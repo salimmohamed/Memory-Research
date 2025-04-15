@@ -1,39 +1,68 @@
-# DMADeceit2
-Simple Human And Infected ESP For Deceit 2
+# DMA Memory Analysis Project
 
-## Showcase
-![image](https://github.com/ProbablyXS/deceit_2_dma/assets/99107085/90c53744-2c50-4ee2-8286-0376b7ee85e0)
+## Overview
+This project serves as an educational platform for learning about memory analysis, cybersecurity, and system architecture. It provides hands-on experience with Direct Memory Access (DMA) techniques and memory manipulation concepts in a controlled environment.
 
-![image](https://github.com/ProbablyXS/deceit_2_dma/assets/99107085/5d3daa1d-38e7-47b8-b6a5-a427b9bcbf7a)
+## Educational Focus
+This project is designed to:
+- Understand memory management and system architecture
+- Learn about DMA techniques and their applications
+- Develop skills in memory analysis and debugging
+- Practice ethical cybersecurity principles
+- Gain experience with low-level system interactions
 
+## Technical Skills Developed
+- Memory analysis and debugging
+- System architecture understanding
+- DMA implementation and management
+- Cybersecurity best practices
+- Ethical hacking methodologies
+- System security assessment
 
-## Instructions
-* [Installation Guide](./Instructions.md)
-<br>
+## Project Structure
+```
+.
+├── Build/          # Build output directory
+├── DMADeceit2/     # Main project source code
+├── Include/        # Header files
+├── Lib/           # Library dependencies
+└── Images/        # Project documentation images
+```
 
-To Update: Unless a major update is pushed only the GWorld will need updating which can be gotten manually or through [Dumper-7](https://github.com/Encryqed/Dumper-7).<br>
-All the other offsets are labelled with their class name and fieldname, just search for them in an sdk dump. 
+## Learning Objectives
+1. **Memory Analysis**: Understanding how memory is structured and accessed
+2. **System Security**: Learning about memory protection mechanisms
+3. **Debugging Skills**: Developing advanced debugging techniques
+4. **Ethical Practices**: Implementing security testing in an ethical manner
+5. **System Architecture**: Understanding low-level system interactions
 
-## Features
-* Human ESP
-  * Name
-  * Distance
-  * Font Size
-  * Max Distance
-* Infected ESP
-  * Name
-  * Distance
-  * Font Size
-  * Max Distance
-* Overlay
-  * Custom W2S Resolution
-* Config
-  * Load
-  * Save
+## Disclaimer
+This project is intended for educational purposes only. It demonstrates concepts related to memory analysis and system security. Users are expected to:
+- Use this knowledge responsibly
+- Follow ethical guidelines
+- Respect system security
+- Not use these techniques for malicious purposes
+
+## License
+This project is licensed under the terms specified in the LICENSE file. All users must comply with the license terms and use the project responsibly.
+
+## Contributing
+Contributions are welcome! Please ensure that:
+- All contributions align with the educational purpose
+- Code follows ethical guidelines
+- Documentation is clear and educational
+- Security best practices are maintained
+
+## Note
+This project is part of a cybersecurity learning journey. It's designed to help understand system security concepts and develop skills in memory analysis while maintaining ethical standards in cybersecurity practices.
 
 ## Credits
-* [PCILeech](https://github.com/ufrisk/pcileech)
-* [MemProcFS](https://github.com/ufrisk/MemProcFS)
-* [UnnamedZ03](https://github.com/UnnamedZ03/DBD-external-base)
-* [DMALibrary](https://github.com/Metick/DMALibrary/tree/Master)
+This project is based on and inspired by the original work from [ProbablyXS/deceit_2_dma](https://github.com/ProbablyXS/deceit_2_dma). The following libraries and resources were used in the development:
+
+* [PCILeech](https://github.com/ufrisk/pcileech) - Memory acquisition and analysis framework
+* [MemProcFS](https://github.com/ufrisk/MemProcFS) - Memory process file system
+* [UnnamedZ03](https://github.com/UnnamedZ03/DBD-external-base) - External memory reading base
+* [DMALibrary](https://github.com/Metick/DMALibrary/tree/Master) - DMA implementation library
+
+This project has been adapted for educational purposes to demonstrate memory analysis and cybersecurity concepts.
 
