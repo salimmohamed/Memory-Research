@@ -7,6 +7,17 @@
 #include "PlayerEsp.h"
 #include "ConfigUtilities.h"
 
+// Function to check if string contains only Latin characters
+bool IsLatinString(const std::wstring& str) {
+	for (wchar_t c : str) {
+		// Check if character is outside Latin range
+		if (c > 0x007F) { // 0x007F is the end of basic Latin
+			return false;
+		}
+	}
+	return true;
+}
+
 std::shared_ptr<CheatFunction> UpdatePlayers = std::make_shared<CheatFunction>(5, [] {
 	if (!EngineInstance)
 		return;
@@ -27,6 +38,10 @@ void DrawPlayerEsp()
 		// Skip if player name is "Entity" or empty/whitespace
 		std::wstring playerName = entity->GetPlayerName();
 		if (playerName == L"Entity" || playerName.empty() || std::all_of(playerName.begin(), playerName.end(), iswspace))
+			continue;
+
+		// Skip if name contains non-Latin characters
+		if (!IsLatinString(playerName))
 			continue;
 
 		Vector2 screenpos = Camera::WorldToScreen(EngineInstance->GetCameraCache().POV, entity->GetPosition());
