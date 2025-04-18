@@ -33,6 +33,9 @@ D2D1::ColorF ColourPick = Colour(0, 150, 255, 255);        // Highlight color
 std::wstring ScreenWidth = std::to_wstring(Configs.Overlay.Width);
 std::wstring ScreenHeight = std::to_wstring(Configs.Overlay.Height);
 
+// Debug settings
+bool DebugEnabled = false;  // Add this for the Debug tab toggle
+
 // Main function to create and initialize the GUI
 void CreateGUI()
 {
@@ -147,6 +150,22 @@ void CreateGUI()
 			configtab->Push(loadconfig);
 		}
 		tabcontroller->Push(configtab);
+
+		// Create Debug Tab
+		auto debugtab = std::make_shared<Tab>(LIT(L"Debug"), 5, 105, &SelectedTab, 0, 20);
+		{
+			// Add a Label with debug information
+			auto debuglabel = std::make_shared<Label>(LIT(L"Debug Information"), 100, 5);
+			debugtab->Push(debuglabel);
+			
+			// Add more debug information labels
+			auto debuglabel2 = std::make_shared<Label>(LIT(L"Version: 1.0.0"), 100, 25);
+			debugtab->Push(debuglabel2);
+			
+			auto debuglabel3 = std::make_shared<Label>(LIT(L"Status: Running"), 100, 45);
+			debugtab->Push(debuglabel3);
+		}
+		tabcontroller->Push(debugtab);
 	}
 
 	// Add form to main container and initialize
