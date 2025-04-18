@@ -165,8 +165,44 @@ void Engine::Cache()
 	// Cache function is now empty since we moved everything to constructor
 }
 
+bool Engine::CheckForNewGame()
+{
+	uint32_t currentActorCount = GetActorSize();
+	
+	// If we haven't set a last count yet, set it and return false
+	if (LastActorCount == 0)
+	{
+		LastActorCount = currentActorCount;
+		return false;
+	}
+
+	// If actor count changed significantly (more than 10%), we're probably in a new game
+	if (abs((int)currentActorCount - (int)LastActorCount) > (LastActorCount * 0.1))
+	{
+		LastActorCount = currentActorCount;
+		return true;
+	}
+
+	return false;
+}
+
+void Engine::ReloadActors()
+{
+	// Clear existing actors
+	Actors.clear();
+	
+	// Re-cache the actors
+	Cache();
+}
+
 void Engine::UpdatePlayers()
 {
+	// Check if we need to reload actors
+	if (CheckForNewGame())
+	{
+		ReloadActors();
+	}
+
 	auto handle = TargetProcess.CreateScatterHandle();
 	for (std::shared_ptr<ActorEntity> entity : Actors)
 	{

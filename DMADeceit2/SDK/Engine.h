@@ -20,6 +20,8 @@ private:
 	uint64_t CameraManager = 0x360; // PlayerController -> PlayerCameraManager
 	uint64_t CameraCachePrivate = 0x1410; // PlayerCameraManager -> CameraCachePrivate
 
+	uint32_t LastActorCount = 0;
+	bool bShouldReload = false;
 
 	CameraCacheEntry CameraEntry; // ScriptStruct Engine.CameraCacheEntry //DONE
 	MinimalViewInfo CameraViewInfo; // ScriptStruct Engine.MinimalViewInfo //DONE
@@ -32,5 +34,7 @@ public:
 	CameraCacheEntry GetCameraCache();
 	void RefreshViewMatrix(VMMDLL_SCATTER_HANDLE handle);
 	uint32_t GetActorSize();
+	bool CheckForNewGame();
+	void ReloadActors();
 
 };
