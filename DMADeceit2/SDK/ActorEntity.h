@@ -3,57 +3,88 @@
 #include <iostream>
 #include <string>
 
+/**
+ * Actor Entity System
+ * 
+ * This system handles all game entities (players, objects, etc.) in the game world.
+ * It provides functionality for:
+ * - Reading entity data from game memory
+ * - Managing entity states and properties
+ * - Handling player roles and characters
+ * - Processing entity positions and names
+ */
+
+/**
+ * Player role enumeration
+ * Defines the different roles a player can have in the game
+ */
 enum class EPlayerRole : uint8_t 
 { 
-	EDeceitRole__Human = 0,
-	EDeceitRole__Terror = 1, 
-	EDeceitRole__Medic = 2,
-	EDeceitRole__Warden = 3, 
-	EDeceitRole__Inquisitor = 4,
-	EDeceitRole__Mimic = 5, 
-	EDeceitRole__Vector = 6,
-	EDeceitRole__Seer = 7,
-	EDeceitRole__Purifier = 8,
-	EDeceitRole__Medium = 9,
-	EDeceitRole__Chemist = 10,
-	EDeceitRole__Soulbound = 11,
-	EDeceitRole__Phantom = 12,
-	EDeceitRole__Invalid = 13
+	EDeceitRole__Human = 0,      // Regular human player
+	EDeceitRole__Terror = 1,     // Terror player
+	EDeceitRole__Medic = 2,      // Medic role
+	EDeceitRole__Warden = 3,     // Warden role
+	EDeceitRole__Inquisitor = 4, // Inquisitor role
+	EDeceitRole__Mimic = 5,      // Mimic role
+	EDeceitRole__Vector = 6,     // Vector role
+	EDeceitRole__Seer = 7,       // Seer role
+	EDeceitRole__Purifier = 8,   // Purifier role
+	EDeceitRole__Medium = 9,     // Medium role
+	EDeceitRole__Chemist = 10,   // Chemist role
+	EDeceitRole__Soulbound = 11, // Soulbound role
+	EDeceitRole__Phantom = 12,   // Phantom role
+	EDeceitRole__Invalid = 13    // Invalid/unknown role
 };
 
+/**
+ * Character enumeration
+ * Defines the different playable characters in the game
+ */
 enum class EDeceitCharacter : uint8_t {
-	Alex = 0,
-	Lisa = 1,
-	Chang = 2,
-	Rachel = 3,
-	Hans = 4,
-	Nina = 5,
-	Jak = 6,
-	Priya = 7,
-	Beck = 8,
-	Last = 9
+	Alex = 0,    // Alex character
+	Lisa = 1,    // Lisa character
+	Chang = 2,   // Chang character
+	Rachel = 3,  // Rachel character
+	Hans = 4,    // Hans character
+	Nina = 5,    // Nina character
+	Jak = 6,     // Jak character
+	Priya = 7,   // Priya character
+	Beck = 8,    // Beck character
+	Last = 9     // Last character
 };
 
+/**
+ * Terror type enumeration
+ * Defines the different types of terror characters
+ */
 enum class EDeceitTerror : uint8_t {
-	EDeceitTerror__Experiment = 0,
-	EDeceitTerror__Werewolf = 1,
-	EDeceitTerror__Vampire = 2,
-	EDeceitTerror__Clown = 3,
-	EDeceitTerror__Last = 4
+	EDeceitTerror__Experiment = 0, // Experiment terror
+	EDeceitTerror__Werewolf = 1,   // Werewolf terror
+	EDeceitTerror__Vampire = 2,    // Vampire terror
+	EDeceitTerror__Clown = 3,      // Clown terror
+	EDeceitTerror__Last = 4        // Last terror type
 };
 
+/**
+ * Game role enumeration
+ * Defines the basic roles in the game
+ */
 enum class EDeceitRole : uint8_t {
-	EDeceitRole__Human = 0,
-	EDeceitRole__Terror = 1,
-	EDeceitRole__Medic = 2,
-	EDeceitRole__Warden = 3,
-	EDeceitRole__Inquisitor = 4,
-	EDeceitRole__Mimic = 5,
-	EDeceitRole__Vector = 6,
-	EDeceitRole__Invalid = 7
+	EDeceitRole__Human = 0,      // Human role
+	EDeceitRole__Terror = 1,     // Terror role
+	EDeceitRole__Medic = 2,      // Medic role
+	EDeceitRole__Warden = 3,     // Warden role
+	EDeceitRole__Inquisitor = 4, // Inquisitor role
+	EDeceitRole__Mimic = 5,      // Mimic role
+	EDeceitRole__Vector = 6,     // Vector role
+	EDeceitRole__Invalid = 7     // Invalid role
 };
 
- //Function to get the string name from the enum value
+/**
+ * Converts character enum to display name
+ * @param character - Character enum value
+ * @return Display name as wide string
+ */
 inline std::wstring GetPlayerNameById(EDeceitCharacter character) {
 	switch (character) {
 	case EDeceitCharacter::Alex: return L"Alex";
@@ -70,36 +101,98 @@ inline std::wstring GetPlayerNameById(EDeceitCharacter character) {
 	}
 }
 
+/**
+ * Actor Entity Class
+ * 
+ * This class represents a game entity in the world.
+ * It handles:
+ * - Reading entity data from memory
+ * - Managing entity properties
+ * - Updating entity states
+ * - Providing access to entity information
+ */
 class ActorEntity
 {
 private:
+	// Memory offsets for entity data
 	uint64_t Class = 0;
 	EPlayerRole PlayerRole;
 	bool TerrorCosmetic;
 	EDeceitCharacter CharacterNameId;
 	uint64_t PlayerNameAddress;
-	uint64_t PlayerState = 0x2c8; // Pawn -> PlayerState
-	uint64_t AcknowledgedPawn = 0x350; // Pawn -> AcknowledgedPawn
-	uint64_t RootComponent = 0x1b8; // Actor -> RootComponent
-	uint64_t RelativeLocation = 0x128; // SceneComponent -> RelativeLocation
-	uint64_t GameRole = 0x688; // ADeceitPlayerState -> ChosenRole
+	uint64_t PlayerState = 0x2c8;        // Pawn -> PlayerState
+	uint64_t AcknowledgedPawn = 0x350;   // Pawn -> AcknowledgedPawn
+	uint64_t RootComponent = 0x1b8;      // Actor -> RootComponent
+	uint64_t RelativeLocation = 0x128;   // SceneComponent -> RelativeLocation
+	uint64_t GameRole = 0x688;           // ADeceitPlayerState -> ChosenRole
 	uint64_t TerrorCosmeticOffset = 0x548; // is infected
-	uint64_t GameCharacterName = 0x528; // ADeceitPlayerState -> Character
+	uint64_t GameCharacterName = 0x528;  // ADeceitPlayerState -> Character
 	uint64_t GamePlayerNameOffset = 0x340; // APlayerState -> PlayerNamePrivate
+
+	// Entity properties
 	std::wstring CharacterName = LIT(L"Entity");
 	std::wstring PlayerName = LIT(L"Entity");
 	UEVector UEPosition;
 	Vector3 Position;
-public:
-	ActorEntity(uint64_t address, VMMDLL_SCATTER_HANDLE handle);
-	void SetUp1(VMMDLL_SCATTER_HANDLE handle);
-	void SetUp2();
-	uint64_t GetClass();
-	bool GetPlayerRole();
-	EDeceitCharacter GetCharacterNameId();
-	std::wstring GetCharacterName();
-	std::wstring GetPlayerName();
-	Vector3 GetPosition();
-	void UpdatePosition(VMMDLL_SCATTER_HANDLE handle);
 
+public:
+	/**
+	 * Constructor
+	 * @param address - Memory address of the entity
+	 * @param handle - Scatter handle for memory operations
+	 */
+	ActorEntity(uint64_t address, VMMDLL_SCATTER_HANDLE handle);
+
+	/**
+	 * Initial setup of entity data
+	 * @param handle - Scatter handle for memory operations
+	 */
+	void SetUp1(VMMDLL_SCATTER_HANDLE handle);
+
+	/**
+	 * Secondary setup of entity data
+	 */
+	void SetUp2();
+
+	/**
+	 * Gets the entity's class address
+	 * @return Class address
+	 */
+	uint64_t GetClass();
+
+	/**
+	 * Gets the player's role
+	 * @return true if player is a terror, false otherwise
+	 */
+	bool GetPlayerRole();
+
+	/**
+	 * Gets the character ID
+	 * @return Character enum value
+	 */
+	EDeceitCharacter GetCharacterNameId();
+
+	/**
+	 * Gets the character's display name
+	 * @return Character name as wide string
+	 */
+	std::wstring GetCharacterName();
+
+	/**
+	 * Gets the player's name
+	 * @return Player name as wide string
+	 */
+	std::wstring GetPlayerName();
+
+	/**
+	 * Gets the entity's position
+	 * @return Position as Vector3
+	 */
+	Vector3 GetPosition();
+
+	/**
+	 * Updates the entity's position
+	 * @param handle - Scatter handle for memory operations
+	 */
+	void UpdatePosition(VMMDLL_SCATTER_HANDLE handle);
 };

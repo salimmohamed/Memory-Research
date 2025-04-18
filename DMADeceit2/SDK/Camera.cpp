@@ -2,6 +2,18 @@
 #include "ConfigUtilities.h"
 #include "Camera.h"
 
+/**
+ * Creates a view matrix from rotation and origin
+ * 
+ * This function constructs a 4x4 view matrix used for 3D to 2D projection.
+ * The matrix is built using:
+ * - Rotation angles (pitch, yaw, roll)
+ * - Origin point
+ * 
+ * @param rot - Rotation angles in degrees (pitch, yaw, roll)
+ * @param origin - Origin point in 3D space
+ * @return 4x4 view matrix
+ */
 static ViewMatrix CreateMatrix(Vector3 rot, Vector3 origin) {
 	const float DEG_TO_RAD = static_cast<float>(3.14159265358979323846) / 180.f;
 	const float radPitch = rot.x * DEG_TO_RAD;
@@ -39,6 +51,20 @@ static ViewMatrix CreateMatrix(Vector3 rot, Vector3 origin) {
 	return matrix;
 }
 
+/**
+ * Converts 3D world coordinates to 2D screen coordinates
+ * 
+ * This function projects a 3D point in world space to 2D screen space.
+ * It handles:
+ * - Camera view transformation
+ * - Perspective projection
+ * - Field of view scaling
+ * - Screen center alignment
+ * 
+ * @param viewinfo - Camera view information (position, rotation, FOV)
+ * @param world - 3D point in world space to project
+ * @return 2D screen coordinates, or Vector2::Zero() if point is behind camera
+ */
 Vector2 Camera::WorldToScreen(MinimalViewInfo viewinfo, Vector3 world)
 {
 	Vector3 Screenlocation(0, 0, 0);

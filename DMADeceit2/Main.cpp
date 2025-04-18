@@ -5,9 +5,39 @@
 #include "Init.h"
 #include "GUI.h"
 #include "Engine.h"
+
+/**
+ * @file Main.cpp
+ * @brief Main application entry point and window management
+ * 
+ * This file contains the main entry point for the cheat application
+ * and handles window creation, message processing, and initialization.
+ * It provides:
+ * - Process attachment and initialization
+ * - Window creation and management
+ * - Message loop and rendering
+ * - Cleanup and shutdown
+ */
+
+// Global engine instance for managing game state and features
 std::shared_ptr<Engine> EngineInstance;
+// Name of the target process
 std::string ProcessName;
 
+/**
+ * @brief Main initialization function
+ * 
+ * This function sets up the cheat by:
+ * 1. Finding and attaching to the target game process
+ * 2. Initializing DMA communication
+ * 3. Setting up the engine and caching game data
+ * 
+ * It supports multiple game processes:
+ * - Deceit2Game-Win64-Shipping.exe
+ * - DeadByDaylight-EGS-Shipping.exe
+ * 
+ * The function exits if it cannot find a valid game process.
+ */
 void main()
 {
 	bool gamefound = true;
@@ -19,7 +49,6 @@ void main()
 	else if (TargetProcess.Init("DeadByDaylight-EGS-Shipping.exe"))
 	{
 		ProcessName = "DeadByDaylight-EGS-Shipping.exe";
-
 	}
 	else
 	{
@@ -33,11 +62,24 @@ void main()
 	EngineInstance = std::make_shared<Engine>();
 	EngineInstance->Cache();
 
-	
-
 	//uint64_t persistentlevel = 0x190;
 	//persistentlevel = TargetProcess.Read<uint64_t>(gobjects + gameinstance);
 }
+
+/**
+ * @brief Window procedure for handling window messages
+ * @param hWnd - Window handle
+ * @param message - Windows message
+ * @param wParam - Additional message information
+ * @param lParam - Additional message information
+ * @return Result of message processing
+ * 
+ * This function processes window messages for the overlay window.
+ * It handles:
+ * - Window destruction
+ * - Input events
+ * - Other window messages
+ */
 LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	InputWndProc(hWnd, message, wParam, lParam);
@@ -52,6 +94,26 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 	return DefWindowProc(hWnd, message, wParam, lParam);
 }
 
+/**
+ * @brief Entry point for the Windows application
+ * @param hInstance - Application instance handle
+ * @param hPrevInstance - Previous instance handle (unused)
+ * @param lpCmdLine - Command line arguments
+ * @param nCmdShow - Window show command
+ * @return Application exit code
+ * 
+ * This function:
+ * 1. Sets up the console window for debugging
+ * 2. Creates the main overlay window
+ * 3. Initializes Direct2D and GUI
+ * 4. Enters the message loop
+ * 5. Handles cleanup on exit
+ * 
+ * The message loop processes:
+ * - Window messages
+ * - Input events
+ * - Rendering updates
+ */
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	HWND hWnd;
@@ -80,7 +142,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	if (!hWnd)
 		return -1;
-
 
 	SetLayeredWindowAttributes(hWnd, RGB(0, 0, 0), 255, LWA_ALPHA);
 

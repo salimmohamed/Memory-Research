@@ -1,172 +1,197 @@
 #pragma once
 #include "pch.h"
 #include "InputManager.h"
+
+/**
+ * Memory Class
+ * 
+ * This class provides Direct Memory Access (DMA) functionality for reading and writing
+ * game memory. It serves as the core interface for all memory operations in the cheat.
+ * 
+ * Key Features:
+ * - DMA initialization and management
+ * - Process memory reading/writing
+ * - Pattern scanning
+ * - Scatter read/write operations
+ * - Module and export/import table access
+ * - Memory dumping and analysis
+ */
+
 class Memory
 {
 private:
+	/**
+	 * Structure to hold loaded DLL modules
+	 * Required for DMA operations
+	 */
 	struct LibModules
 	{
-		HMODULE VMM = nullptr;
-		HMODULE FTD3XX = nullptr;
-		HMODULE LEECHCORE = nullptr;
+		HMODULE VMM = nullptr;      // Virtual Memory Manager module
+		HMODULE FTD3XX = nullptr;   // FTDI USB module for FPGA communication
+		HMODULE LEECHCORE = nullptr; // Memory acquisition module
 	};
 
 	static inline LibModules modules{ };
 
+	/**
+	 * Structure to store current process information
+	 * Tracks the target process being accessed
+	 */
 	struct CurrentProcessInformation
 	{
-		int PID = 0;
-		size_t base_address = 0;
-		size_t base_size = 0;
-		std::string process_name = "";
+		int PID = 0;                // Process ID
+		size_t base_address = 0;    // Base address of the process
+		size_t base_size = 0;       // Size of the process memory
+		std::string process_name = ""; // Name of the process
 	};
+
+	// Map of module names to their base addresses
 	std::unordered_map<std::wstring, ULONG64> Modules;
 
-
+	// State flags for DMA and process initialization
 	static inline BOOLEAN DMA_INITIALIZED = FALSE;
 	static inline BOOLEAN PROCESS_INITIALIZED = FALSE;
+
 	/**
-	*Dumps the systems Current physical memory pages
-	*To a file so we can use it in our DMA (:
-	*This file it created to %temp% folder
-	*@return true if successful, false if not.
-	*/
+	 * Dumps the system's physical memory pages to a file
+	 * Required for DMA operations to work
+	 * @param debug - Enable debug output
+	 * @return true if successful
+	 */
 	bool DumpMemoryMap(bool debug = false);
 
 	/**
-	* brief Removes basic information related to the FPGA device
-	* This is required before any DMA operations can be done.
-	* To ensure the optimal safety in game cheating.
-	* @return true if successful, false if not.
-	*/
+	 * Configures the FPGA device for DMA operations
+	 * Sets up the hardware for memory access
+	 * @return true if successful
+	 */
 	bool SetFPGA();
 
 	/*this->registry_ptr = std::make_shared<c_registry>(*this);
 	this->key_ptr = std::make_shared<c_keys>(*this);*/
 
 public:
+	// Current process information
 	static inline CurrentProcessInformation current_process{ };
 
 	/**
-	 * brief Constructor takes a wide string of the process.
-	 * Expects that all the libraries are in the root dir
+	 * Constructor and Destructor
+	 * Handles initialization and cleanup of DMA resources
 	 */
 	Memory();
 	~Memory();
 
 	/**
-	* brief Initializes the DMA
-	* This is required before any DMA operations can be done.
-	* @param process_name the name of the process
-	* @param memMap if true, will dump the memory map to a file	& make the DMA use it.
-	* @return true if successful, false if not.
-	*/
+	 * Initializes the DMA system
+	 * Sets up all required components for memory access
+	 * @param process_name - Name of the target process
+	 * @param memMap - Whether to dump memory map
+	 * @param debug - Enable debug output
+	 * @return true if successful
+	 */
 	bool Init(std::string process_name, bool memMap = true, bool debug = false);
 
 	/*This part here is things related to the process information such as Base daddy, Size ect.*/
 
 	/**
-	* brief Gets the process id of the process
-	* @param process_name the name of the process
-	* @return the process id of the process
-	*/
+	 * Gets the process ID from process name
+	 * @param process_name - Name of the process
+	 * @return Process ID
+	 */
 	DWORD GetPidFromName(std::string process_name);
 
 	/**
-	* brief Gets all the processes id(s) of the process
-	* @param process_name the name of the process
-	* @returns all the processes id(s) of the process
-	*/
+	 * Gets all process IDs matching the given name
+	 * @param process_name - Name of the process
+	 * @return Vector of process IDs
+	 */
 	std::vector<int> GetPidListFromName(std::string process_name);
 
 	/**
-	* \brief Gets the module list of the process
-	* \param process_name the name of the process
-	* \return all the module names of the process
-	*/
+	 * Gets the list of modules loaded by the process
+	 * @param process_name - Name of the process
+	 * @return Vector of module names
+	 */
 	std::vector<std::string> GetModuleList(std::string process_name);
 
 	/**
-	* \brief Gets the process information
-	* \return the process information
-	*/
+	 * Gets detailed process information
+	 * @return Process information structure
+	 */
 	VMMDLL_PROCESS_INFORMATION GetProcessInformation();
 
 
 	/**
-	* brief Gets the base address of the process
-	* @param module_name the name of the module
-	* @return the base address of the process
-	*/
+	 * Gets the base address of a module
+	 * @param module_name - Name of the module
+	 * @return Base address
+	 */
 	size_t GetBaseAddress(std::string module_name);
 
 	/**
-	* brief Gets the base size of the process
-	* @param module_name the name of the module
-	* @return the base size of the process
-	*/
+	 * Gets the size of a module
+	 * @param module_name - Name of the module
+	 * @return Module size
+	 */
 	size_t GetBaseSize(std::string module_name);
 
 	/**
-	* brief Gets the export table address of the process
-	* @param import the name of the export
-	* @param process the name of the process
-	* @param module the name of the module that you wanna find the export in
-	* @return the export table address of the export
-	*/
+	 * Gets the address of an exported function
+	 * @param import - Name of the export
+	 * @param process - Name of the process
+	 * @param module - Name of the module
+	 * @return Export address
+	 */
 	uintptr_t GetExportTableAddress(std::string import, std::string process, std::string module);
 
 	/**
-	* brief Gets the import table address of the process
-	* @param import the name of the import
-	* @param process the name of the process
-	* @param module the name of the module that you wanna find the import in
-	* @return the import table address of the import
-	*/
+	 * Gets the address of an imported function
+	 * @param import - Name of the import
+	 * @param process - Name of the process
+	 * @param module - Name of the module
+	 * @return Import address
+	 */
 	uintptr_t GetImportTableAddress(std::string import, std::string process, std::string module);
 
 	/**
-	 * \brief This fixes the CR3 fuckery that EAC does.
-	 * It fixes it by iterating over all DTB's that exist within your system and looks for specific ones
-	 * that nolonger have a PID assigned to them, aka their pid is 0
-	 * it then puts it in a vector to later try each possible DTB to find the DTB of the process.
-	 * NOTE: Using FixCR3 requires you to have symsrv.dll, dbghelp.dll and info.db
+	 * Fixes CR3 register to bypass anti-cheat protection
+	 * Required for reading memory from protected processes
+	 * @return true if successful
 	 */
 	bool FixCr3();
 
 	/**
-	 * \brief Dumps the process memory at address (requires to be a valid PE Header) to the path
-	 * \param address the address to the PE Header(BaseAddress)
-	 * \param path the path where you wanna save dump to
+	 * Dumps process memory to a file
+	 * @param address - Starting address
+	 * @param path - Output file path
+	 * @return true if successful
 	 */
 	bool DumpMemory(uintptr_t address, std::string path);
 
 	/*This part is where all memory operations are done, such as read, write.*/
 
 	/**
-	 * \brief Scans the process for the signature.
-	 * \param signature the signature example "48 ? ? ?"
-	 * \param range_start Region to start scan from
-	 * \param range_end Region up to where it should scan
-	 * \param PID (OPTIONAL) where to read to?
-	 * \return address of signature
+	 * Scans memory for a pattern
+	 * @param signature - Pattern to search for (e.g. "48 ? ? ?")
+	 * @param range_start - Start address
+	 * @param range_end - End address
+	 * @param PID - Process ID (optional)
+	 * @return Address of found pattern
 	 */
 	uint64_t FindSignature(const char* signature, uint64_t range_start, uint64_t range_end, int PID = 0);
 
 	/**
-	 * \brief Writes memory to the process
-	 * \param address The address to write to
-	 * \param buffer The buffer to writeze of the buffer
-	 * \return
-	 * \param size The si
+	 * Writes memory to the process
+	 * @param address - Target address
+	 * @param buffer - Data to write
+	 * @param size - Size of data
+	 * @return true if successful
 	 */
 	bool Write(uintptr_t address, void* buffer, size_t size) const;
 	bool Write(uintptr_t address, void* buffer, size_t size, int pid) const;
 
 	/**
-	 * \brief Writes memory to the process using a template
-	 * \param address to write to
-	 * \param value the value you'll write to the address
+	 * Template function for writing typed data
 	 */
 	template <typename T>
 	bool Write(void* address, T value)
@@ -181,27 +206,24 @@ public:
 	}
 
 	/**
-	* brief Reads memory from the process
-	* @param address The address to read from
-	* @param buffer The buffer to read to
-	* @param size The size of the buffer
-	* @return true if successful, false if not.
-	*/
+	 * Reads memory from the process
+	 * @param address - Source address
+	 * @param buffer - Buffer to store data
+	 * @param size - Size to read
+	 * @return true if successful
+	 */
 	bool Read(uintptr_t address, void* buffer, size_t size) const;
 	bool Read(uintptr_t address, void* buffer, size_t size, int pid) const;
 
 	/**
-	* brief Reads memory from the process using a template
-	* @param address The address to read from
-	* @return the value read from the process
-	*/
+	 * Template function for reading typed data
+	 */
 	template <typename T>
 	T Read(void* address)
 	{
 		T buffer{ };
 		memset(&buffer, 0, sizeof(T));
 		Read(reinterpret_cast<uint64_t>(address), reinterpret_cast<void*>(&buffer), sizeof(T));
-
 		return buffer;
 	}
 
@@ -212,18 +234,14 @@ public:
 	}
 
 	/**
-	* brief Reads memory from the process using a template and pid
-	* @param address The address to read from
-	* @param pid The process id of the process
-	* @return the value read from the process
-	*/
+	 * Template function for reading typed data with specific PID
+	 */
 	template <typename T>
 	T Read(void* address, int pid)
 	{
 		T buffer{ };
 		memset(&buffer, 0, sizeof(T));
 		Read(reinterpret_cast<uint64_t>(address), reinterpret_cast<void*>(&buffer), sizeof(T), pid);
-
 		return buffer;
 	}
 
@@ -234,26 +252,35 @@ public:
 	}
 
 	/**
-	 * \brief Create a scatter handle, this is used for scatter read/write requests
-	 * \return Scatter handle
+	 * Creates a scatter handle for batch memory operations
+	 * @return Scatter handle
 	 */
 	VMMDLL_SCATTER_HANDLE CreateScatterHandle();
 	VMMDLL_SCATTER_HANDLE CreateScatterHandle(int pid);
 
 	/**
-	 * \brief Closes the scatter handle
-	 * \param handle
+	 * Closes a scatter handle
+	 * @param handle - Handle to close
 	 */
 	void CloseScatterHandle(VMMDLL_SCATTER_HANDLE handle);
 
 	/**
-	 * \brief Adds a scatter read/write request to the handle
-	 * \param handle the handle
-	 * \param address the address to read/write to
-	 * \param buffer the buffer to read/write to
-	 * \param size the size of buffer
+	 * Adds a read request to scatter handle
+	 * @param handle - Scatter handle
+	 * @param address - Address to read
+	 * @param buffer - Buffer to store data
+	 * @param size - Size to read
+	 * @return true if successful
 	 */
 	bool AddScatterReadRequest(VMMDLL_SCATTER_HANDLE handle, uint64_t address, void* buffer, size_t size);
+
+	/**
+	 * Adds a write request to scatter handle
+	 * @param handle - Scatter handle
+	 * @param address - Address to write
+	 * @param buffer - Data to write
+	 * @param size - Size to write
+	 */
 	void AddScatterWriteRequest(VMMDLL_SCATTER_HANDLE handle, uint64_t address, void* buffer, size_t size);
 	template <typename T>
 	bool AddScatterWriteRequest(VMMDLL_SCATTER_HANDLE handle, uint64_t addr, T value) const
@@ -269,12 +296,17 @@ public:
 	}
 
 	/**
-	 * \brief Executes all prepared scatter requests, note if you created a scatter handle with a pid
-	 * you'll need to specify the pid in the execute function. so we can clear the scatters from the handle.
-	 * \param handle
-	 * \param pid
+	 * Executes all read requests in scatter handle
+	 * @param handle - Scatter handle
+	 * @param pid - Process ID (optional)
 	 */
 	void ExecuteReadScatter(VMMDLL_SCATTER_HANDLE handle, int pid = 0);
+
+	/**
+	 * Executes all write requests in scatter handle
+	 * @param handle - Scatter handle
+	 * @param pid - Process ID (optional)
+	 */
 	void ExecuteWriteScatter(VMMDLL_SCATTER_HANDLE handle, int pid = 0);
 
 
