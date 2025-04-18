@@ -2,6 +2,7 @@
 #include "Pch.h"
 #include "PlayerConfig.h"
 #include "Overlay.h"
+#include "DebugConfig.h"
 
 /**
  * @file ConfigInstance.h
@@ -11,6 +12,7 @@
  * all configuration instances used by the cheat. It provides:
  * - Configuration storage for different player types
  * - Overlay configuration management
+ * - Debug configuration management
  * - JSON serialization/deserialization
  * - Default configuration values
  */
@@ -23,6 +25,7 @@
  * - Survivor player configuration
  * - Killer player configuration
  * - Overlay configuration
+ * - Debug configuration
  * 
  * The class also handles serialization and deserialization of
  * configurations to/from JSON format.
@@ -33,6 +36,7 @@ public:
 	PlayerConfig Survivor = PlayerConfig(LIT("Survivor"));  ///< Configuration for survivor players
 	PlayerConfig Killer = PlayerConfig(LIT("Killer"));      ///< Configuration for killer players
 	OverlayConfig Overlay = OverlayConfig(LIT("Overlay"));  ///< Overlay configuration
+	DebugConfig Debug = DebugConfig(LIT("Debug"));          ///< Debug configuration
 
 	/**
 	 * @brief Default constructor
@@ -56,6 +60,7 @@ public:
 	 * - Survivor configuration
 	 * - Killer configuration
 	 * - Overlay configuration
+	 * - Debug configuration
 	 */
 	json ToJson()
 	{
@@ -63,6 +68,7 @@ public:
 		jsoned.merge_patch(Survivor.ToJson());
 		jsoned.merge_patch(Overlay.ToJson());
 		jsoned.merge_patch(Killer.ToJson());
+		jsoned.merge_patch(Debug.ToJson());
 		return jsoned;
 	}
 
@@ -80,5 +86,6 @@ public:
 		Survivor.FromJson(jsoned);
 		Overlay.FromJson(jsoned);
 		Killer.FromJson(jsoned);
+		Debug.FromJson(jsoned);
 	}
 };

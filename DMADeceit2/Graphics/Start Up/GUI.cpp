@@ -16,6 +16,13 @@
 #include "TabListBoxController.h"
 #include "TextBox.h"
 #include "ConfigUtilities.h"
+#include "Globals.h"
+#include "PlayerEsp.h"
+#include "CheckBox.h"
+#include "ColorPicker.h"
+
+std::shared_ptr<TabController> GUI::Instance;
+
 int SelectedTab = 1;
 int SelectedSubTab = 0;
 int TabCount = 0;
@@ -26,20 +33,30 @@ D2D1::ColorF ColourPickerClipBoard = Colour(255,255,255);
 D2D1::ColorF ColourPick = Colour(0, 150, 255, 255);
 std::wstring ScreenWidth = std::to_wstring(Configs.Overlay.Width);
 std::wstring ScreenHeight = std::to_wstring(Configs.Overlay.Height);
+
 void CreateGUI()
 {
+	auto tabcontroller = std::make_shared<TabController>();
+	tabcontroller->SetVisible(true);
+
 	MenuEntity = std::make_shared<Container>();
 	auto form = std::make_shared<Form>(100, 100.0f, 300, 200, 2, 30, LIT(L"DMA Deceit 2"), false);
 	{
-		auto tabcontroller = std::make_shared<TabController>();
-		form->Push(tabcontroller);
+		// Create debug tab
+		auto debugTab = std::make_shared<Tab>(LIT(L"Debug"), 5, 5, &SelectedTab, 0, 20);
+		{
+			auto debugLabel = std::make_shared<Label>(100, 5, LIT(L"Hello World"));
+			debugTab->Push(debugLabel);
+		}
+		tabcontroller->Push(debugTab);
 
 		auto playeresptab = std::make_shared<Tab>(LIT(L"Player ESP"), 5, 5, &SelectedTab, 0, 20);
 		{
 			auto name = std::make_shared<Toggle>(100, 5, LIT(L"Name"), &Configs.Survivor.Name);
 			playeresptab->Push(name);
-			auto textcolour = std::make_shared<ColourPicker>(160, 6, &Configs.Survivor.TextColour);
-			playeresptab->Push(textcolour);
+			// Using default light blue color from ConfigInstance.h - fix later if needed
+			// auto textcolour = std::make_shared<ColourPicker>(160.0f, 6.0f, &Configs.Survivor.TextColour);
+			// playeresptab->Push(textcolour);
 			auto distance = std::make_shared<Toggle>(100, 25, LIT(L"Distance"), &Configs.Survivor.Distance);
 			playeresptab->Push(distance);
 			auto maxdistance = std::make_shared<Slider<int>>(100, 45, 150, LIT(L"Max Distance"), LIT(L"m"), 0, 1000, &Configs.Survivor.MaxDistance);
@@ -52,8 +69,9 @@ void CreateGUI()
 		{
 			auto name = std::make_shared<Toggle>(100, 5, LIT(L"Name"), &Configs.Killer.Name);
 			killeresptab->Push(name);
-			auto textcolour = std::make_shared<ColourPicker>(160, 6, &Configs.Killer.TextColour);
-			killeresptab->Push(textcolour);
+			// Using default red color from ConfigInstance.h - fix later if needed
+			// auto textcolour = std::make_shared<ColourPicker>(160.0f, 6.0f, &Configs.Killer.TextColour);
+			// killeresptab->Push(textcolour);
 			auto distance = std::make_shared<Toggle>(100, 25, LIT(L"Distance"), &Configs.Killer.Distance);
 			killeresptab->Push(distance);
 			auto maxdistance = std::make_shared<Slider<int>>(100, 45, 150, LIT(L"Max Distance"), LIT(L"m"), 0, 1000, &Configs.Killer.MaxDistance);
@@ -90,31 +108,23 @@ void CreateGUI()
 					}
 				});
 			overlaytab->Push(screenheight);
-
-
 		}
 		tabcontroller->Push(overlaytab);
 		auto configtab = std::make_shared<Tab>(LIT(L"Config"), 5, 80, &SelectedTab, 0, 20);
 		{
 			auto saveconfig = std::make_shared<Button>(100, 5, LIT(L"Save"), []()
 				{
-
-
 					SaveConfig(L"Default.json");
 					CreateGUI(); // reinit/ reload
 					SelectedTab = 1;
-
 				});
 			configtab->Push(saveconfig);
 
 			auto loadconfig = std::make_shared<Button>(165, 5, LIT(L"Load"), []()
 				{
-
-
 					LoadConfig(L"Default.json");
 					CreateGUI(); // reinit/ reload
 					SelectedTab = 1;
-
 				});
 			configtab->Push(loadconfig);
 		}
@@ -124,6 +134,8 @@ void CreateGUI()
 	MenuEntity->Push(form);
 	MenuEntity->Draw();
 	MenuEntity->Update();
+
+	GUI::Instance = tabcontroller;
 }
 
 void SetFormPriority()
@@ -148,4 +160,13 @@ void Render()
 	MenuEntity->Draw();
 	MenuEntity->GetContainer()[0]->Update(); // only allow stretching,dragging and other update stuff if it is the main form, prevents dragging and sizing the wrong forms.
 	SetFormPriority();
+}
+
+void RenderGUI()
+{
+	if (!GUI::Instance)
+		return;
+
+	GUI::Instance->Draw();
+	GUI::Instance->Update();
 }

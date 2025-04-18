@@ -2,8 +2,10 @@
 #include "ActorEntity.h"
 #include "Camera.h"
 #include "Globals.h"
+#include "../Misc/StreamOperators.h"
 #include <string>
 #include <set>
+#include <sstream>
 
 ActorEntity::ActorEntity(uint64_t address,VMMDLL_SCATTER_HANDLE handle)
 {
@@ -117,16 +119,18 @@ void ActorEntity::SetUp2()
 
 		// Only print debug info for valid players
 		if (TerrorCosmetic) {
-			printf("\n=== New Player Found ===\n");
-			printf("PlayerState: %p\n", PlayerState);
-			printf("AcknowledgedPawn: %p\n", AcknowledgedPawn);
-			printf("RootComponent: %p\n", RootComponent);
-			printf("CharacterNameId: %d\n", CharacterNameId);
-			printf("TerrorCosmetic: %d\n", TerrorCosmetic);
-			printf("PlayerRole: %d\n", PlayerRole);
-			printf("Position: %.2f, %.2f, %.2f\n", Position.x, Position.y, Position.z);
-			printf("CharacterName: %s\n", CharacterName.c_str());
-			printf("PlayerName: %s\n", PlayerName.c_str());
+			std::wstringstream ss;
+			ss << L"\n=== New Player Found ===\n";
+			ss << L"PlayerState: " << std::hex << PlayerState << L"\n";
+			ss << L"AcknowledgedPawn: " << std::hex << AcknowledgedPawn << L"\n";
+			ss << L"RootComponent: " << std::hex << RootComponent << L"\n";
+			ss << L"CharacterNameId: " << std::dec << static_cast<int>(CharacterNameId) << L"\n";
+			ss << L"TerrorCosmetic: " << TerrorCosmetic << L"\n";
+			ss << L"PlayerRole: " << PlayerRole << L"\n";
+			ss << L"Position: " << Position.x << L", " << Position.y << L", " << Position.z << L"\n";
+			ss << L"CharacterName: " << CharacterName << L"\n";
+			ss << L"PlayerName: " << PlayerName << L"\n";
+			AddDebugOutput(ss.str());
 		}
 	}
 

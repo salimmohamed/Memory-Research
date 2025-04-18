@@ -3,6 +3,8 @@
 #include "ActorEntity.h"
 #include "Globals.h"
 #include "vmmdll.h"
+#include "../Misc/StreamOperators.h"
+#include "../Misc/DebugUtils.h"
 
 /**
  * Engine Constructor
@@ -17,47 +19,53 @@
 Engine::Engine()
 {
 	// Print process information
-	printf("\n=== Process Info ===\n");
-	printf("Process Name: %s\n", ProcessName.c_str());
+	std::wstringstream ss;
+	ss << L"\n=== Process Info ===\n";
+	ss << L"Process Name: " << std::wstring(ProcessName.begin(), ProcessName.end()) << L"\n";
 	uint64_t base = TargetProcess.GetBaseAddress(ProcessName);
 	uint64_t size = TargetProcess.GetBaseSize(ProcessName);
-	printf("Base Address: %p\n", (void*)base);
-	printf("Base Size: 0x%llx\n", size);
+	ss << L"Base Address: " << std::hex << base << L"\n";
+	ss << L"Base Size: 0x" << std::hex << size << L"\n";
+	AddDebugOutput(ss.str());
 
 	// Set up object hierarchy by reading from game memory
-	printf("\n=== Object Hierarchy ===\n");
+	ss.str(L"");
+	ss << L"\n=== Object Hierarchy ===\n";
 	GWorld = TargetProcess.Read<uint64_t>(base + GWorld);
-	printf("GWorld: %p\n", GWorld);
+	ss << L"GWorld: " << std::hex << GWorld << L"\n";
 	PersistentLevel = TargetProcess.Read<uint64_t>(GWorld + PersistentLevel);
-	printf("PersistentLevel: %p\n", PersistentLevel);
+	ss << L"PersistentLevel: " << std::hex << PersistentLevel << L"\n";
 	OwningGameInstance = TargetProcess.Read<uint64_t>(GWorld + OwningGameInstance);
-	printf("OwningGameInstance: %p\n", OwningGameInstance);
+	ss << L"OwningGameInstance: " << std::hex << OwningGameInstance << L"\n";
 	LocalPlayers = TargetProcess.Read<uint64_t>(OwningGameInstance + LocalPlayers);
-	printf("LocalPlayers: %p\n", LocalPlayers);
+	ss << L"LocalPlayers: " << std::hex << LocalPlayers << L"\n";
 	LocalPlayers = TargetProcess.Read<uint64_t>(LocalPlayers);
-	printf("LocalPlayers dereferenced: %p\n", LocalPlayers);
+	ss << L"LocalPlayers dereferenced: " << std::hex << LocalPlayers << L"\n";
 	PlayerController = TargetProcess.Read<uint64_t>(LocalPlayers + PlayerController);
-	printf("PlayerController: %p\n", PlayerController);
+	ss << L"PlayerController: " << std::hex << PlayerController << L"\n";
 	AcknowledgedPawn = TargetProcess.Read<uint64_t>(PlayerController + AcknowledgedPawn);
-	printf("AcknowledgedPawn: %p\n", AcknowledgedPawn);
+	ss << L"AcknowledgedPawn: " << std::hex << AcknowledgedPawn << L"\n";
 	CameraManager = TargetProcess.Read<uint64_t>(PlayerController + CameraManager);
-	printf("CameraManager: %p\n", CameraManager);
+	ss << L"CameraManager: " << std::hex << CameraManager << L"\n";
 	CameraEntry = TargetProcess.Read<CameraCacheEntry>(CameraManager + CameraCachePrivate);
-	printf("CameraCacheEntry: %p\n", CameraEntry);
+	ss << L"CameraCacheEntry: " << std::hex << CameraEntry << L"\n";
+	AddDebugOutput(ss.str());
 
 	// Read and process actor array
-	printf("\n=== Actor Array Info ===\n");
+	ss.str(L"");
+	ss << L"\n=== Actor Array Info ===\n";
 	
 	// Read actor array information
 	uint64_t OwningActor = TargetProcess.Read<uint64_t>(PersistentLevel + 0xA0);
 	int MaxPacket = TargetProcess.Read<int>(PersistentLevel + 0xA8);
 	
-	printf("OwningActor: %p\n", (void*)OwningActor);
-	printf("MaxPacket: %d\n", MaxPacket);
+	ss << L"OwningActor: " << std::hex << OwningActor << L"\n";
+	ss << L"MaxPacket: " << MaxPacket << L"\n";
 
 	// Validate actor array data
 	if (!OwningActor || MaxPacket <= 0 || MaxPacket > 1000) {
-		printf("Invalid actor array data\n");
+		ss << L"Invalid actor array data\n";
+		AddDebugOutput(ss.str());
 		return;
 	}
 
@@ -69,7 +77,7 @@ Engine::Engine()
 	std::vector<uint64_t> playerActors;
 	for (int i = 0; i < MaxPacket; i++) {
 		if (!actors[i]) {
-			printf("Skipping null actor at index %d\n", i);
+			ss << L"Skipping null actor at index " << i << L"\n";
 			continue;
 		}
 
@@ -110,7 +118,9 @@ Engine::Engine()
 		}
 	}
 
-	printf("Found %zu potential player actors\n", playerActors.size());
+	ss.str(L"");
+	ss << L"Found " << playerActors.size() << L" potential player actors\n";
+	AddDebugOutput(ss.str());
 
 	// Create ActorEntity objects for each player actor
 	std::vector<std::shared_ptr<ActorEntity>> actorEntities;
@@ -135,10 +145,13 @@ Engine::Engine()
 	}
 
 	Actors = actorEntities;
-	printf("Found %zu valid players\n", Actors.size());
+	ss.str(L"");
+	ss << L"Found " << Actors.size() << L" valid players\n";
+	AddDebugOutput(ss.str());
 
 	// Print detailed information about valid players
-	printf("\n=== Valid Players Found ===\n");
+	ss.str(L"");
+	ss << L"\n=== Valid Players Found ===\n";
 	for (const auto& actor : Actors) {
 		// Skip invalid player names
 		if (actor->GetPlayerName().empty() || 
@@ -163,15 +176,15 @@ Engine::Engine()
 		}
 
 		// Print player information
-		printf("Player: %ls\n", actor->GetPlayerName().c_str());
-		printf("Character: %ls\n", actor->GetCharacterName().c_str());
-		printf("Role: %s\n", actor->GetPlayerRole() ? "Terror" : "Human");
-		printf("Position: %.2f, %.2f, %.2f\n", 
-			actor->GetPosition().x, 
-			actor->GetPosition().y, 
-			actor->GetPosition().z);
-		printf("-------------------\n");
+		ss << L"Player: " << actor->GetPlayerName() << L"\n";
+		ss << L"Character: " << actor->GetCharacterName() << L"\n";
+		ss << L"Role: " << (actor->GetPlayerRole() ? L"Terror" : L"Human") << L"\n";
+		ss << L"Position: " << actor->GetPosition().x << L", " 
+		   << actor->GetPosition().y << L", " 
+		   << actor->GetPosition().z << L"\n";
+		ss << L"-------------------\n";
 	}
+	AddDebugOutput(ss.str());
 }
 
 /**

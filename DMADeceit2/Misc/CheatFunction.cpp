@@ -1,5 +1,8 @@
 #include "Pch.h"
 #include "CheatFunction.h"
+#include "Globals.h"
+#include <mutex>
+#include "DebugUtils.h"
 
 /**
  * @file CheatFunction.cpp

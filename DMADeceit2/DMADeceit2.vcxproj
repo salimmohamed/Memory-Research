@@ -175,6 +175,7 @@
     <ClCompile Include="Memory\Memory.cpp" />
     <ClCompile Include="Memory\Registry.cpp" />
     <ClCompile Include="Misc\CheatFunction.cpp" />
+    <ClCompile Include="Misc\DebugUtils.cpp" />
     <ClCompile Include="Misc\Input.cpp" />
     <ClCompile Include="Misc\Pch\Pch.cpp" />
     <ClCompile Include="Misc\Vector.cpp" />
@@ -215,6 +216,7 @@
     <ClInclude Include="Memory\Registry.h" />
     <ClInclude Include="Misc\CheatFunction.h" />
     <ClInclude Include="Memory\Memory.h" />
+    <ClInclude Include="Misc\DebugUtils.h" />
     <ClInclude Include="Misc\Input.h" />
     <ClInclude Include="Misc\Pch\Pch.h" />
     <ClInclude Include="Misc\Vector.h" />

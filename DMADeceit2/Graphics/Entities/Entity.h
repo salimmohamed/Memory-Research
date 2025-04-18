@@ -73,6 +73,7 @@ public:
 	void SetBlockedSiblings(bool block);
 	void SetParent(child parent);
 	void SetRelativeParent(child parent);
+	void SetSize(Vector2 size) { Size = size; }
 
 	// event handlers
 	void SetValueChangedEvent(std::function<void()> evnt);

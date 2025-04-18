@@ -1,5 +1,7 @@
 #pragma once
 #include "Engine.h"
+#include "pch.h"
+#include "ConfigInstance.h"
 
 /**
  * @file Globals.h
@@ -36,3 +38,10 @@ extern std::shared_ptr<Engine> EngineInstance;
  * - Initialization checks
  */
 extern std::string ProcessName;
+
+extern ConfigInstances Configs;
+extern bool MenuOpen;
+extern int TabCount;
+
+// Function to add debug output to the GUI
+void AddDebugOutput(const std::wstring& text);

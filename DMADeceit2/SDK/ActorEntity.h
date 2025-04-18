@@ -66,21 +66,6 @@ enum class EDeceitTerror : uint8_t {
 };
 
 /**
- * Game role enumeration
- * Defines the basic roles in the game
- */
-enum class EDeceitRole : uint8_t {
-	EDeceitRole__Human = 0,      // Human role
-	EDeceitRole__Terror = 1,     // Terror role
-	EDeceitRole__Medic = 2,      // Medic role
-	EDeceitRole__Warden = 3,     // Warden role
-	EDeceitRole__Inquisitor = 4, // Inquisitor role
-	EDeceitRole__Mimic = 5,      // Mimic role
-	EDeceitRole__Vector = 6,     // Vector role
-	EDeceitRole__Invalid = 7     // Invalid role
-};
-
-/**
  * Converts character enum to display name
  * @param character - Character enum value
  * @return Display name as wide string

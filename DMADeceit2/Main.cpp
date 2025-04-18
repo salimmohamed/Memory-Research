@@ -42,6 +42,8 @@ void main()
 {
 	bool gamefound = true;
 	ProcessName = "Deceit2Game-Win64-Shipping.exe";
+
+	std::wstringstream ss;
 	if (TargetProcess.Init("Deceit2Game-Win64-Shipping.exe"))
 	{
 		ProcessName = "Deceit2Game-Win64-Shipping.exe";
@@ -52,7 +54,8 @@ void main()
 	}
 	else
 	{
-		printf("Failed to find game\n");
+		ss << L"Failed to find game\n";
+		AddDebugOutput(ss.str());
 		return;
 	}
 	TargetProcess.FixCr3();
@@ -120,10 +123,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	WNDCLASSEX wc;
 	AllocConsole();
 	FILE* fDummy;
-	freopen_s(&fDummy, LIT("CONIN$"), LIT("r"), stdin);
-	freopen_s(&fDummy, LIT("CONOUT$"), LIT("w"), stderr);
-	freopen_s(&fDummy, LIT("CONOUT$"), LIT("w"), stdout);
-	printf(LIT("Debugging Window:\n"));
+	freopen_s(&fDummy, "CONIN$", "r", stdin);
+	freopen_s(&fDummy, "CONOUT$", "w", stderr);
+	freopen_s(&fDummy, "CONOUT$", "w", stdout);
+
+	std::wstringstream ss;
+	ss << L"Debugging Window:\n";
+	AddDebugOutput(ss.str());
 
 	main();
 	ZeroMemory(&wc, sizeof(WNDCLASSEX));

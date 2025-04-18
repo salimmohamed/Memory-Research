@@ -1,27 +1,38 @@
 #include "pch.h"
 #include "Memory.h"
+#include "../Graphics/Entities/Entity.h"
+#include "../Misc/DebugUtils.h"
 
 #include <thread>
 #include <iostream>
 #include <chrono>
 #include <filesystem>
 #include <vector>
+#include <sstream>
+
 Memory::Memory()
 {
-	LOG("loading libraries...\n");
+	std::wstringstream ss;
+	ss << L"Loading libraries...\n";
+	AddDebugOutput(ss.str());
+
 	modules.VMM = LoadLibraryA("vmm.dll");
 	modules.FTD3XX = LoadLibraryA("FTD3XX.dll");
 	modules.LEECHCORE = LoadLibraryA("leechcore.dll");
 
 	if (!modules.VMM || !modules.FTD3XX || !modules.LEECHCORE)
 	{
-		LOG("vmm: %p\n", modules.VMM);
-		LOG("ftd: %p\n", modules.FTD3XX);
-		LOG("leech: %p\n", modules.LEECHCORE);
+		ss.str(L"");
+		ss << L"vmm: " << std::hex << modules.VMM << L"\n";
+		ss << L"ftd: " << std::hex << modules.FTD3XX << L"\n";
+		ss << L"leech: " << std::hex << modules.LEECHCORE << L"\n";
+		AddDebugOutput(ss.str());
 		DebugBreak();
 	}
 
-	LOG("Successfully loaded libraries!\n");
+	ss.str(L"");
+	ss << L"Successfully loaded libraries!\n";
+	AddDebugOutput(ss.str());
 }
 
 Memory::~Memory()
@@ -33,7 +44,7 @@ Memory::~Memory()
 
 bool Memory::DumpMemoryMap(bool debug)
 {
-	LPSTR args[] = { (LPSTR)"", (LPSTR)"-device", (LPSTR)"fpga://algo=0", (LPSTR)"", (LPSTR)"" };
+	LPSTR args[] = { (LPSTR)"", (LPSTR)"-device", (LPSTR)"fpga://algo=0", (LPSTR)"", (LPSTR)"-v", (LPSTR)"-printf" };
 	int argc = 3;
 	if (debug)
 	{
@@ -44,21 +55,27 @@ bool Memory::DumpMemoryMap(bool debug)
 	VMM_HANDLE handle = VMMDLL_Initialize(argc, args);
 	if (!handle)
 	{
-		LOG("[!] Failed to open a VMM Handle\n");
+		std::wstringstream ss;
+		ss << L"[!] Failed to open a VMM Handle\n";
+		AddDebugOutput(ss.str());
 		return false;
 	}
 
 	PVMMDLL_MAP_PHYSMEM pPhysMemMap = NULL;
 	if (!VMMDLL_Map_GetPhysMem(handle, &pPhysMemMap))
 	{
-		LOG("[!] Failed to get physical memory map\n");
+		std::wstringstream ss;
+		ss << L"[!] Failed to get physical memory map\n";
+		AddDebugOutput(ss.str());
 		VMMDLL_Close(handle);
 		return false;
 	}
 
 	if (pPhysMemMap->dwVersion != VMMDLL_MAP_PHYSMEM_VERSION)
 	{
-		LOG("[!] Invalid VMM Map Version\n");
+		std::wstringstream ss;
+		ss << L"[!] Invalid VMM Map Version\n";
+		AddDebugOutput(ss.str());
 		VMMDLL_MemFree(pPhysMemMap);
 		VMMDLL_Close(handle);
 		return false;
@@ -66,7 +83,9 @@ bool Memory::DumpMemoryMap(bool debug)
 
 	if (pPhysMemMap->cMap == 0)
 	{
-		printf("[!] Failed to get physical memory map\n");
+		std::wstringstream ss;
+		ss << L"[!] Failed to get physical memory map\n";
+		AddDebugOutput(ss.str());
 		VMMDLL_MemFree(pPhysMemMap);
 		VMMDLL_Close(handle);
 		return false;
@@ -84,7 +103,9 @@ bool Memory::DumpMemoryMap(bool debug)
 	nFile.close();
 
 	VMMDLL_MemFree(pPhysMemMap);
-	LOG("Successfully dumped memory map to file!\n");
+	std::wstringstream ss;
+	ss << L"Successfully dumped memory map to file!\n";
+	AddDebugOutput(ss.str());
 	//Little sleep to make sure it's written to file.
 	Sleep(3000);
 	VMMDLL_Close(handle);
@@ -132,9 +153,11 @@ bool Memory::Init(std::string process_name, bool memMap, bool debug)
 {
 	if (!DMA_INITIALIZED)
 	{
-		LOG("inizializing...\n");
+		std::wstringstream ss;
+		ss << L"Initializing...\n";
+		AddDebugOutput(ss.str());
 	reinit:
-		LPSTR args[] = { (LPSTR)"", (LPSTR)"-device", (LPSTR)"fpga://algo=0", (LPSTR)"", (LPSTR)"", (LPSTR)"", (LPSTR)"" };
+		LPSTR args[] = { (LPSTR)"", (LPSTR)"-device", (LPSTR)"fpga://algo=0", (LPSTR)"", (LPSTR)"", (LPSTR)"", (LPSTR)"-v", (LPSTR)"-printf" };
 		DWORD argc = 3;
 		if (debug)
 		{
@@ -152,15 +175,21 @@ bool Memory::Init(std::string process_name, bool memMap, bool debug)
 				dumped = this->DumpMemoryMap(debug);
 			else
 				dumped = true;
-			LOG("dumping memory map to file...\n");
+			ss.str(L"");
+			ss << L"Dumping memory map to file...\n";
+			AddDebugOutput(ss.str());
 			if (!dumped)
 			{
-				LOG("[!] ERROR: Could not dump memory map!\n");
-				LOG("Defaulting to no memory map!\n");
+				ss.str(L"");
+				ss << L"[!] ERROR: Could not dump memory map!\n";
+				ss << L"Defaulting to no memory map!\n";
+				AddDebugOutput(ss.str());
 			}
 			else
 			{
-				LOG("Dumped memory map!\n");
+				ss.str(L"");
+				ss << L"Dumped memory map!\n";
+				AddDebugOutput(ss.str());
 
 				//Add the memory map to the arguments and increase arg count.
 				args[argc++] = (LPSTR)"-memmap";
@@ -173,10 +202,14 @@ bool Memory::Init(std::string process_name, bool memMap, bool debug)
 			if (memMap)
 			{
 				memMap = false;
-				LOG("[!] Initialization failed with Memory map? Try without MMap\n");
+				ss.str(L"");
+				ss << L"[!] Initialization failed with Memory map? Try without MMap\n";
+				AddDebugOutput(ss.str());
 				goto reinit;
 			}
-			LOG("[!] Initialization failed! Is the DMA in use or disconnected?\n");
+			ss.str(L"");
+			ss << L"[!] Initialization failed! Is the DMA in use or disconnected?\n";
+			AddDebugOutput(ss.str());
 			return false;
 		}
 
@@ -185,13 +218,17 @@ bool Memory::Init(std::string process_name, bool memMap, bool debug)
 		VMMDLL_ConfigGet(this->vHandle, LC_OPT_FPGA_FPGA_ID, &FPGA_ID);
 		VMMDLL_ConfigGet(this->vHandle, LC_OPT_FPGA_DEVICE_ID, &DEVICE_ID);
 
-		LOG("FPGA ID: %llu\n", FPGA_ID);
-		LOG("DEVICE ID: %llu\n", DEVICE_ID);
-		LOG("success!\n");
+		ss.str(L"");
+		ss << L"FPGA ID: " << FPGA_ID << L"\n";
+		ss << L"DEVICE ID: " << DEVICE_ID << L"\n";
+		ss << L"Success!\n";
+		AddDebugOutput(ss.str());
 
 		if (!this->SetFPGA())
 		{
-			LOG("[!] Could not set FPGA!\n");
+			ss.str(L"");
+			ss << L"[!] Could not set FPGA!\n";
+			AddDebugOutput(ss.str());
 			VMMDLL_Close(this->vHandle);
 			return false;
 		}
@@ -199,44 +236,66 @@ bool Memory::Init(std::string process_name, bool memMap, bool debug)
 		DMA_INITIALIZED = TRUE;
 	}
 	else
-		LOG("DMA already initialized!\n");
+	{
+		std::wstringstream ss;
+		ss << L"DMA already initialized!\n";
+		AddDebugOutput(ss.str());
+	}
 
 	if (PROCESS_INITIALIZED)
 	{
-		LOG("Process already initialized!\n");
+		std::wstringstream ss;
+		ss << L"Process already initialized!\n";
+		AddDebugOutput(ss.str());
 		return true;
 	}
 
 	this->current_process.PID = GetPidFromName(process_name);
 	if (!this->current_process.PID)
 	{
-		LOG("[!] Could not get PID from name!\n");
+		std::wstringstream ss;
+		ss << L"[!] Could not get PID from name!\n";
+		AddDebugOutput(ss.str());
 		return false;
 	}
 	this->current_process.process_name = process_name;
 	if (!TargetProcess.FixCr3())
-		std::cout << "Failed to fix CR3" << std::endl;
+	{
+		std::wstringstream ss;
+		ss << L"Failed to fix CR3\n";
+		AddDebugOutput(ss.str());
+	}
 	else
-		std::cout << "CR3 fixed" << std::endl;
+	{
+		std::wstringstream ss;
+		ss << L"CR3 fixed\n";
+		AddDebugOutput(ss.str());
+	}
 
 	this->current_process.base_address = GetBaseAddress(process_name);
 	if (!this->current_process.base_address)
 	{
-		LOG("[!] Could not get base address!\n");
+		std::wstringstream ss;
+		ss << L"[!] Could not get base address!\n";
+		AddDebugOutput(ss.str());
 		return false;
 	}
 
 	this->current_process.base_size = GetBaseSize(process_name);
 	if (!this->current_process.base_size)
 	{
-		LOG("[!] Could not get base size!\n");
+		std::wstringstream ss;
+		ss << L"[!] Could not get base size!\n";
+		AddDebugOutput(ss.str());
 		return false;
 	}
 
-	LOG("Process information of %s\n", process_name.c_str());
-	LOG("PID: %i\n", this->current_process.PID);
-	LOG("Base Address: 0x%p\n", this->current_process.base_address);
-	LOG("Base Size: 0x%p\n", this->current_process.base_size);
+	std::wstringstream ss;
+	ss << L"Process information of " << std::wstring(process_name.begin(), process_name.end()) << L"\n";
+	ss << L"PID: " << this->current_process.PID << L"\n";
+	ss << L"Base Address: 0x" << std::hex << this->current_process.base_address << L"\n";
+	ss << L"Base Size: 0x" << std::hex << this->current_process.base_size << L"\n";
+	AddDebugOutput(ss.str());
 
 	PROCESS_INITIALIZED = TRUE;
 
