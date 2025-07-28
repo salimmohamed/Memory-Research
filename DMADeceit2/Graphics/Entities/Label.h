@@ -9,5 +9,6 @@ public:
     Label(std::wstring name, float x, float y);
     void Update();
     void Draw();
+    void SetText(std::wstring text);
 };
 

@@ -16,6 +16,7 @@
 #include "TabListBoxController.h"
 #include "TextBox.h"
 #include "ConfigUtilities.h"
+#include <algorithm>
 
 // Global variables for GUI state management
 int SelectedTab = 1;        // Currently selected tab index
@@ -33,8 +34,17 @@ D2D1::ColorF ColourPick = Colour(0, 150, 255, 255);        // Highlight color
 std::wstring ScreenWidth = std::to_wstring(Configs.Overlay.Width);
 std::wstring ScreenHeight = std::to_wstring(Configs.Overlay.Height);
 
-// Debug settings
-bool DebugEnabled = false;  // Add this for the Debug tab toggle
+// Define the debug output buffer
+std::vector<std::string> DebugOutput;
+int MaxDebugLines = 20; // Maximum number of debug lines to display
+
+// Function to add debug output
+void AddDebugOutput(const char* text) {
+	if (DebugOutput.size() >= MaxDebugLines) {
+		DebugOutput.erase(DebugOutput.begin());
+	}
+	DebugOutput.push_back(text);
+}
 
 // Main function to create and initialize the GUI
 void CreateGUI()
@@ -154,16 +164,17 @@ void CreateGUI()
 		// Create Debug Tab
 		auto debugtab = std::make_shared<Tab>(LIT(L"Debug"), 5, 105, &SelectedTab, 0, 20);
 		{
-			// Add a Label with debug information
-			auto debuglabel = std::make_shared<Label>(LIT(L"Debug Information"), 100, 5);
-			debugtab->Push(debuglabel);
+			// Add a header label
+			auto debugheader = std::make_shared<Label>(LIT(L"Debug Information"), 100, 5);
+			debugtab->Push(debugheader);
 			
-			// Add more debug information labels
-			auto debuglabel2 = std::make_shared<Label>(LIT(L"Version: 1.0.0"), 100, 25);
-			debugtab->Push(debuglabel2);
-			
-			auto debuglabel3 = std::make_shared<Label>(LIT(L"Status: Running"), 100, 45);
-			debugtab->Push(debuglabel3);
+			// Add debug output labels
+			float yOffset = 10.0f;
+			for (const auto& line : DebugOutput) {
+				auto debuglabel = std::make_shared<Label>(std::wstring(line.begin(), line.end()), 100, yOffset);
+				debugtab->Push(debuglabel);
+				yOffset += 20.0f;
+			}
 		}
 		tabcontroller->Push(debugtab);
 	}

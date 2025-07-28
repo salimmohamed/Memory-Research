@@ -36,6 +36,9 @@ This project is designed to:
 4. **Ethical Practices**: Implementing security testing in an ethical manner
 5. **System Architecture**: Understanding low-level system interactions
 
+## Future Development
+For a detailed roadmap of planned features and ongoing development, please see our [TODO.md](TODO.md) file.
+
 ## Disclaimer
 This project is intended for educational purposes only. It demonstrates concepts related to memory analysis and system security. Users are expected to:
 - Use this knowledge responsibly
@@ -65,4 +68,3 @@ This project is based on and inspired by the original work from [ProbablyXS/dece
 * [DMALibrary](https://github.com/Metick/DMALibrary/tree/Master) - DMA implementation library
 
 This project has been adapted for educational purposes to demonstrate memory analysis and cybersecurity concepts.
-

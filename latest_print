@@ -1,110 +1,1031 @@
-Debugging Window:
-inizializing...
-dumping memory map to file...
-Dumped memory map!
-FPGA ID: 9
-DEVICE ID: 1280
-success!
-[+] VMMDLL_ConfigGet ID = 9 VERSION = 0.0
-CR3 fixed
-[+] Found Base Address for Deceit2Game-Win64-Shipping.exe at 0x00007FF635B40000
-[+] Found Base Size for Deceit2Game-Win64-Shipping.exe at 0x000000000A88F000
-Process information of Deceit2Game-Win64-Shipping.exe
-PID: 28476
-Base Address: 0x00007FF635B40000
-Base Size: 0x000000000A88F000
-[+] Found Base Size for Deceit2Game-Win64-Shipping.exe at 0x000000000A88F000
-
-=== Process Info ===
-Process Name: Deceit2Game-Win64-Shipping.exe
-[+] Found Base Size for Deceit2Game-Win64-Shipping.exe at 0x000000000A88F000
-Base Address: 00007FF635B40000
-Base Size: 0xa88f000
-
-=== Object Hierarchy ===
-GWorld: 000001783101E170
-PersistentLevel: 00000178273B50B0
-OwningGameInstance: 0000017726B8D690
-LocalPlayers: 000001777FC4AB40
-LocalPlayers dereferenced: 000001779623DCF0
-PlayerController: 0000017834A3C250
-AcknowledgedPawn: 000001770E961A80
-CameraManager: 00000177ABBCD560
-CameraCacheEntry: 000000A3CC93F740
-
-=== Actor Array Info ===
-OwningActor: 000001790AD37780
-MaxPacket: 472
-Skipping null actor at index 427
-Skipping null actor at index 428
-Skipping null actor at index 431
-Skipping null actor at index 434
-Skipping null actor at index 435
-Skipping null actor at index 436
-Skipping null actor at index 437
-Skipping null actor at index 440
-Skipping null actor at index 441
-Skipping null actor at index 442
-Skipping null actor at index 443
-Skipping null actor at index 444
-Skipping null actor at index 445
-Skipping null actor at index 446
-Skipping null actor at index 447
-Skipping null actor at index 448
-Skipping null actor at index 449
-Skipping null actor at index 450
-Skipping null actor at index 451
-Skipping null actor at index 452
-Skipping null actor at index 453
-Skipping null actor at index 454
-Skipping null actor at index 456
-Skipping null actor at index 457
-Skipping null actor at index 458
-Skipping null actor at index 459
-Skipping null actor at index 460
-Skipping null actor at index 461
-Skipping null actor at index 466
-Skipping null actor at index 469
-Skipping null actor at index 470
-Found 441 potential player actors
-Found 441 valid players
-
-=== Valid Players Found ===
-Player: Character: Alex
-Role: Terror
-Position: -1224.96, -212.72, 10.00
--------------------
-Player: Kantus
-Character: Priya
-Role: Human
-Position: 187.60, 29.62, 104.55
--------------------
-Player: UNGR_SinV2
-Character: Lisa
-Role: Human
-Position: 4448.80, 2042.31, -198.49
--------------------
-Player: xvlsxa
-Character: Nina
-Role: Human
-Position: -1335.37, 903.97, 104.41
--------------------
-Player: SlinkyTT
-Character: Hans
-Role: Terror
-Position: -1120.02, 1556.95, 104.41
--------------------
-Player: grew
-Character: Beck
-Role: Human
-Position: 5305.16, -430.26, 101.53
--------------------
-Player: outt_04
-Character: Rachel
-Role: Human
-Position: 5271.78, -333.93, 101.53
--------------------
-Player: Tyrensol
-Character: Chang
-Role: Terror
-Position: 1853.80, 243.16, -22.05
+Build started at 2:15 AM...
+1>------ Build started: Project: DMADeceit2, Configuration: Release x64 ------
+1>C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+1>ColourPicker.cpp
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\Graphics.h(26,16): warning C4091: 'typedef ': ignored on left of 'FontInformation' when no variable is declared
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\start up\GUI.h(2,10): error C1083: Cannot open include file: '../Entities/Window.h': No such file or directory
+1>(compiling source file 'Graphics/Entities/ColourPicker.cpp')
+1>Form.cpp
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\Graphics.h(26,16): warning C4091: 'typedef ': ignored on left of 'FontInformation' when no variable is declared
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\start up\GUI.h(2,10): error C1083: Cannot open include file: '../Entities/Window.h': No such file or directory
+1>(compiling source file 'Graphics/Entities/Form.cpp')
+1>KeyBind.cpp
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\Graphics.h(26,16): warning C4091: 'typedef ': ignored on left of 'FontInformation' when no variable is declared
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\start up\GUI.h(2,10): error C1083: Cannot open include file: '../Entities/Window.h': No such file or directory
+1>(compiling source file 'Graphics/Entities/KeyBind.cpp')
+1>Label.cpp
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\Graphics.h(26,16): warning C4091: 'typedef ': ignored on left of 'FontInformation' when no variable is declared
+1>(compiling source file 'Graphics/Entities/Label.cpp')
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\Entities\Label.cpp(30,65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\Entities\Label.cpp(30,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+1>Tab.cpp
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\Graphics.h(26,16): warning C4091: 'typedef ': ignored on left of 'FontInformation' when no variable is declared
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\start up\Gui.h(2,10): error C1083: Cannot open include file: '../Entities/Window.h': No such file or directory
+1>(compiling source file 'Graphics/Entities/Tab.cpp')
+1>TabListBox.cpp
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\Graphics.h(26,16): warning C4091: 'typedef ': ignored on left of 'FontInformation' when no variable is declared
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\start up\GUI.h(2,10): error C1083: Cannot open include file: '../Entities/Window.h': No such file or directory
+1>(compiling source file 'Graphics/Entities/TabListBox.cpp')
+1>TabListBoxController.cpp
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\Graphics.h(26,16): warning C4091: 'typedef ': ignored on left of 'FontInformation' when no variable is declared
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\Entities\TabListBoxController.h(23,53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\start up\GUI.h(2,10): error C1083: Cannot open include file: '../Entities/Window.h': No such file or directory
+1>(compiling source file 'Graphics/Entities/TabListBoxController.cpp')
+1>GUI.cpp
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\Graphics.h(26,16): warning C4091: 'typedef ': ignored on left of 'FontInformation' when no variable is declared
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\Start Up\GUI.h(2,10): error C1083: Cannot open include file: '../Entities/Window.h': No such file or directory
+1>(compiling source file 'Graphics/Start%20Up/GUI.cpp')
+1>Init.cpp
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\Graphics.h(26,16): warning C4091: 'typedef ': ignored on left of 'FontInformation' when no variable is declared
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\Start Up\GUI.h(2,10): error C1083: Cannot open include file: '../Entities/Window.h': No such file or directory
+1>(compiling source file 'Graphics/Start%20Up/Init.cpp')
+1>Main.cpp
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'Main.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\Graphics.h(26,16): warning C4091: 'typedef ': ignored on left of 'FontInformation' when no variable is declared
+1>(compiling source file 'Main.cpp')
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\start up\GUI.h(2,10): error C1083: Cannot open include file: '../Entities/Window.h': No such file or directory
+1>(compiling source file 'Main.cpp')
+1>Engine.cpp
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(120,15):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(473,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\leechcore.h(482,14):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(392,35):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1454,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1464,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1471,27):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1480,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1489,36):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1505,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1515,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1524,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1532,31):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1539,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1548,28):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1559,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1568,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1576,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1585,26):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1594,24):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(1603,29):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25): warning C4200: nonstandard extension used: zero-sized array in struct/union
+1>(compiling source file 'SDK/Engine.cpp')
+1>    C:\Dev\ProbablyXS\deceit_2_dma\Include\vmmdll.h(2138,25):
+1>    This member will be ignored by a defaulted constructor or copy/move assignment operator
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\Graphics.h(26,16): warning C4091: 'typedef ': ignored on left of 'FontInformation' when no variable is declared
+1>(compiling source file 'SDK/Engine.cpp')
+1>C:\Dev\ProbablyXS\deceit_2_dma\DMADeceit2\Graphics\Start Up\GUI.h(2,10): error C1083: Cannot open include file: '../Entities/Window.h': No such file or directory
+1>(compiling source file 'SDK/Engine.cpp')
+1>Done building project "DMADeceit2.vcxproj" -- FAILED.
+========== Build: 0 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========
+========== Build completed at 2:15 AM and took 24.637 seconds ==========

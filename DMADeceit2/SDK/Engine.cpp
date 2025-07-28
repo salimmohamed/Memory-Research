@@ -3,6 +3,27 @@
 #include "ActorEntity.h"
 #include "Globals.h"
 #include "vmmdll.h"
+#include "../Graphics/Start Up/GUI.h"
+
+// Custom printf function to capture debug output
+int DebugPrintf(const char* format, ...) {
+	char buffer[1024];
+	va_list args;
+	va_start(args, format);
+	int result = vsprintf_s(buffer, format, args);
+	va_end(args);
+	
+	// Add the output to our debug buffer
+	AddDebugOutput(buffer);
+	
+	// Also print to console
+	printf("%s", buffer);
+	
+	return result;
+}
+
+// Replace all printf calls with DebugPrintf
+#define printf DebugPrintf
 
 /**
  * Engine Constructor

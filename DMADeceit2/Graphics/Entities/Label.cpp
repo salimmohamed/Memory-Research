@@ -29,3 +29,8 @@ void Label::Draw()
 
 	DrawText(Label::ParentPos.x + Label::Pos.x, Label::ParentPos.y + Label::Pos.y, Label::Name, LIT("Verdana"), 12, textColour, None);
 }
+
+void Label::SetText(std::wstring text)
+{
+	Label::Name = text;
+}
