@@ -26,7 +26,7 @@ private:
 	uint64_t MaxPacket;                   // Maximum packet size
 	uint64_t OwningGameInstance = 0x1d8;  // World -> OwningGameInstance
 	uint64_t PersistentLevel = 0x30;      // World -> PersistentLevel
-	uint64_t GWorld = 0x09DB8648;          // GWorld offset from base
+	uint64_t GWorld = 0x9e3b8c8;          // GWorld offset from base (Updated from Dumpspace)
 	uint64_t LocalPlayers = 0x38;         // GameInstance -> LocalPlayers
 	uint64_t PlayerController = 0x30;     // Player -> PlayerController
 	uint64_t AcknowledgedPawn = 0x350;    // PlayerController -> AcknowledgedPawn
