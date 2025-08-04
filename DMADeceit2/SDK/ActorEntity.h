@@ -152,6 +152,24 @@ public:
 	bool GetPlayerRole();
 
 	/**
+	 * Gets the specific player role enum
+	 * @return Player role enum value
+	 */
+	EPlayerRole GetSpecificPlayerRole();
+
+	/**
+	 * Checks if player is cursed (Mimic, Soulbound, Phantom, Chemist)
+	 * @return true if player is cursed, false otherwise
+	 */
+	bool IsCursed();
+
+	/**
+	 * Gets the cursed role name as string
+	 * @return Cursed role name or empty string if not cursed
+	 */
+	std::wstring GetCursedRoleName();
+
+	/**
 	 * Gets the character ID
 	 * @return Character enum value
 	 */

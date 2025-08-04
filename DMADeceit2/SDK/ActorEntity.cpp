@@ -115,18 +115,21 @@ void ActorEntity::SetUp2()
 		if (static_cast<int>(CharacterNameId) == 0 || static_cast<int>(CharacterNameId) > 10) // Assuming IDs are 1-9 for the 9 characters
 			return;
 
-		// Only print debug info for valid players
-		if (TerrorCosmetic) {
-			printf("\n=== New Player Found ===\n");
-			printf("PlayerState: %p\n", PlayerState);
-			printf("AcknowledgedPawn: %p\n", AcknowledgedPawn);
-			printf("RootComponent: %p\n", RootComponent);
-			printf("CharacterNameId: %d\n", CharacterNameId);
-			printf("TerrorCosmetic: %d\n", TerrorCosmetic);
-			printf("PlayerRole: %d\n", PlayerRole);
-			printf("Position: %.2f, %.2f, %.2f\n", Position.x, Position.y, Position.z);
-			printf("CharacterName: %s\n", CharacterName.c_str());
-			printf("PlayerName: %s\n", PlayerName.c_str());
+		// Print debug info for all valid players (including cursed)
+		printf("\n=== New Player Found ===\n");
+		printf("PlayerState: %p\n", PlayerState);
+		printf("AcknowledgedPawn: %p\n", AcknowledgedPawn);
+		printf("RootComponent: %p\n", RootComponent);
+		printf("CharacterNameId: %d\n", CharacterNameId);
+		printf("TerrorCosmetic: %d\n", TerrorCosmetic);
+		printf("PlayerRole: %d\n", PlayerRole);
+		printf("Position: %.2f, %.2f, %.2f\n", Position.x, Position.y, Position.z);
+		printf("CharacterName: %s\n", CharacterName.c_str());
+		printf("PlayerName: %s\n", PlayerName.c_str());
+		
+		// Check for cursed roles
+		if (IsCursed()) {
+			printf("*** CURSED PLAYER DETECTED: %s ***\n", GetCursedRoleName().c_str());
 		}
 	}
 
@@ -135,6 +138,36 @@ void ActorEntity::SetUp2()
 bool ActorEntity::GetPlayerRole()
 {
 	return TerrorCosmetic;
+}
+
+EPlayerRole ActorEntity::GetSpecificPlayerRole()
+{
+	return PlayerRole;
+}
+
+bool ActorEntity::IsCursed()
+{
+	// Check if player has a cursed role (Mimic, Soulbound, Phantom, Chemist)
+	return (PlayerRole == EPlayerRole::EDeceitRole__Mimic ||
+			PlayerRole == EPlayerRole::EDeceitRole__Soulbound ||
+			PlayerRole == EPlayerRole::EDeceitRole__Phantom ||
+			PlayerRole == EPlayerRole::EDeceitRole__Chemist);
+}
+
+std::wstring ActorEntity::GetCursedRoleName()
+{
+	switch (PlayerRole) {
+	case EPlayerRole::EDeceitRole__Mimic:
+		return L"Mimic";
+	case EPlayerRole::EDeceitRole__Soulbound:
+		return L"Soulbound";
+	case EPlayerRole::EDeceitRole__Phantom:
+		return L"Phantom";
+	case EPlayerRole::EDeceitRole__Chemist:
+		return L"Chemist";
+	default:
+		return L"";
+	}
 }
 
 EDeceitCharacter ActorEntity::GetCharacterNameId()

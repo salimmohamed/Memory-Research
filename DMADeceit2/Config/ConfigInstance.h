@@ -32,6 +32,7 @@ class ConfigInstances
 public:
 	PlayerConfig Survivor = PlayerConfig(LIT("Survivor"));  ///< Configuration for survivor players
 	PlayerConfig Killer = PlayerConfig(LIT("Killer"));      ///< Configuration for killer players
+	PlayerConfig Cursed = PlayerConfig(LIT("Cursed"));      ///< Configuration for cursed players
 	OverlayConfig Overlay = OverlayConfig(LIT("Overlay"));  ///< Overlay configuration
 
 	/**
@@ -40,11 +41,13 @@ public:
 	 * Initializes configuration instances with default values:
 	 * - Survivor text color: Light blue (110, 169, 251)
 	 * - Killer text color: Red (212, 72, 72)
+	 * - Cursed text color: Pink/Magenta (239, 103, 248) - #ef67f8
 	 */
 	ConfigInstances()
 	{
 		Survivor.TextColour = Colour(110, 169, 251); // Light blue for survivors
 		Killer.TextColour = Colour(212, 72, 72); // Red for killers
+		Cursed.TextColour = Colour(239, 103, 248); // Pink/Magenta for cursed players (#ef67f8)
 	}
 
 	/**
@@ -55,6 +58,7 @@ public:
 	 * into a single JSON object. The JSON structure includes:
 	 * - Survivor configuration
 	 * - Killer configuration
+	 * - Cursed configuration
 	 * - Overlay configuration
 	 */
 	json ToJson()
@@ -63,6 +67,7 @@ public:
 		jsoned.merge_patch(Survivor.ToJson());
 		jsoned.merge_patch(Overlay.ToJson());
 		jsoned.merge_patch(Killer.ToJson());
+		jsoned.merge_patch(Cursed.ToJson());
 		return jsoned;
 	}
 
@@ -80,5 +85,6 @@ public:
 		Survivor.FromJson(jsoned);
 		Overlay.FromJson(jsoned);
 		Killer.FromJson(jsoned);
+		Cursed.FromJson(jsoned);
 	}
 };

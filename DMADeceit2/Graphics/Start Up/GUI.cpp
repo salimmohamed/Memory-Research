@@ -101,8 +101,29 @@ void CreateGUI()
 		}
 		tabcontroller->Push(killeresptab);
 
+		// Create Cursed ESP Tab
+		auto cursedesptab = std::make_shared<Tab>(LIT(L"Cursed ESP"), 5, 55, &SelectedTab, 0, 20);
+		{
+			// Name toggle with color picker
+			auto name = std::make_shared<Toggle>(100, 5, LIT(L"Name"), &Configs.Cursed.Name);
+			cursedesptab->Push(name);
+			auto textcolour = std::make_shared<ColourPicker>(160, 6, &Configs.Cursed.TextColour);
+			cursedesptab->Push(textcolour);
+
+			// Distance settings
+			auto distance = std::make_shared<Toggle>(100, 25, LIT(L"Distance"), &Configs.Cursed.Distance);
+			cursedesptab->Push(distance);
+			auto maxdistance = std::make_shared<Slider<int>>(100, 45, 150, LIT(L"Max Distance"), LIT(L"m"), 0, 1000, &Configs.Cursed.MaxDistance);
+			cursedesptab->Push(maxdistance);
+
+			// Text size settings
+			auto textsize = std::make_shared<Slider<int>>(100, 70, 150, LIT(L"Text Size"), LIT(L"px"), 4, 16, &Configs.Cursed.FontSize);
+			cursedesptab->Push(textsize);
+		}
+		tabcontroller->Push(cursedesptab);
+
 		// Create Overlay Tab
-		auto overlaytab = std::make_shared<Tab>(LIT(L"Overlay"), 5, 55, &SelectedTab, 0, 20);
+		auto overlaytab = std::make_shared<Tab>(LIT(L"Overlay"), 5, 80, &SelectedTab, 0, 20);
 		{
 			// Resolution override toggle
 			auto overrideresolution = std::make_shared<Toggle>(100, 5, LIT(L"Override W2S Resolution"), &Configs.Overlay.OverrideResolution);
@@ -139,7 +160,7 @@ void CreateGUI()
 		tabcontroller->Push(overlaytab);
 
 		// Create Config Tab
-		auto configtab = std::make_shared<Tab>(LIT(L"Config"), 5, 80, &SelectedTab, 0, 20);
+		auto configtab = std::make_shared<Tab>(LIT(L"Config"), 5, 105, &SelectedTab, 0, 20);
 		{
 			// Save configuration button
 			auto saveconfig = std::make_shared<Button>(100, 5, LIT(L"Save"), []()
@@ -162,7 +183,7 @@ void CreateGUI()
 		tabcontroller->Push(configtab);
 
 		// Create Debug Tab
-		auto debugtab = std::make_shared<Tab>(LIT(L"Debug"), 5, 105, &SelectedTab, 0, 20);
+		auto debugtab = std::make_shared<Tab>(LIT(L"Debug"), 5, 130, &SelectedTab, 0, 20);
 		{
 			// Add a header label
 			auto debugheader = std::make_shared<Label>(LIT(L"Debug Information"), 100, 5);

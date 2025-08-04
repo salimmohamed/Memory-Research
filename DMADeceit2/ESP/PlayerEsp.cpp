@@ -79,7 +79,11 @@ void DrawPlayerEsp()
 
 		// Determine player role and get appropriate configuration
 		PlayerConfig config = Configs.Survivor;
-		if (entity->GetPlayerRole() == true) config = Configs.Killer;
+		if (entity->IsCursed()) {
+			config = Configs.Cursed;  // Cursed players get their own color
+		} else if (entity->GetPlayerRole() == true) {
+			config = Configs.Killer;  // Terror players
+		}
 
 		// Filter out invalid player names
 		std::wstring playerName = entity->GetPlayerName();
