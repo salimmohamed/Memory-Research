@@ -147,9 +147,10 @@ EPlayerRole ActorEntity::GetSpecificPlayerRole()
 
 bool ActorEntity::IsCursed()
 {
-	// Check if player has a cursed role (Mimic, Soulbound, Phantom, Chemist)
+	// Check if player has a cursed role (Mimic, Soulbound, SoulboundChosen, Phantom, Chemist)
 	return (PlayerRole == EPlayerRole::EDeceitRole__Mimic ||
 			PlayerRole == EPlayerRole::EDeceitRole__Soulbound ||
+			PlayerRole == EPlayerRole::EDeceitRole__SoulboundChosen ||
 			PlayerRole == EPlayerRole::EDeceitRole__Phantom ||
 			PlayerRole == EPlayerRole::EDeceitRole__Chemist);
 }
@@ -161,6 +162,8 @@ std::wstring ActorEntity::GetCursedRoleName()
 		return L"Mimic";
 	case EPlayerRole::EDeceitRole__Soulbound:
 		return L"Soulbound";
+	case EPlayerRole::EDeceitRole__SoulboundChosen:
+		return L"SoulboundChosen";
 	case EPlayerRole::EDeceitRole__Phantom:
 		return L"Phantom";
 	case EPlayerRole::EDeceitRole__Chemist:

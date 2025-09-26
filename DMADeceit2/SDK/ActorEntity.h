@@ -20,20 +20,22 @@
  */
 enum class EPlayerRole : uint8_t 
 { 
-	EDeceitRole__Human = 0,      // Regular human player
-	EDeceitRole__Terror = 1,     // Terror player
-	EDeceitRole__Medic = 2,      // Medic role
-	EDeceitRole__Warden = 3,     // Warden role
-	EDeceitRole__Inquisitor = 4, // Inquisitor role
-	EDeceitRole__Mimic = 5,      // Mimic role
-	EDeceitRole__Vector = 6,     // Vector role
-	EDeceitRole__Seer = 7,       // Seer role
-	EDeceitRole__Purifier = 8,   // Purifier role
-	EDeceitRole__Medium = 9,     // Medium role
-	EDeceitRole__Chemist = 10,   // Chemist role
-	EDeceitRole__Soulbound = 11, // Soulbound role
-	EDeceitRole__Phantom = 12,   // Phantom role
-	EDeceitRole__Invalid = 13    // Invalid/unknown role
+	EDeceitRole__Human = 0,           // Regular human player
+	EDeceitRole__Terror = 1,          // Terror player
+	EDeceitRole__Medic = 2,           // Medic role
+	EDeceitRole__Warden = 3,          // Warden role
+	EDeceitRole__Inquisitor = 4,      // Inquisitor role
+	EDeceitRole__Mimic = 5,           // Mimic role
+	EDeceitRole__Vector = 6,          // Vector role
+	EDeceitRole__Seer = 7,            // Seer role
+	EDeceitRole__Purifier = 8,        // Purifier role
+	EDeceitRole__Medium = 9,           // Medium role
+	EDeceitRole__Chemist = 10,        // Chemist role
+	EDeceitRole__Soulbound = 11,      // Soulbound role
+	EDeceitRole__Phantom = 12,        // Phantom role
+	EDeceitRole__SoulboundChosen = 13, // SoulboundChosen role
+	EDeceitRole__Observer = 14,       // Observer role
+	EDeceitRole__Invalid = 15         // Invalid/unknown role
 };
 
 /**
@@ -158,7 +160,7 @@ public:
 	EPlayerRole GetSpecificPlayerRole();
 
 	/**
-	 * Checks if player is cursed (Mimic, Soulbound, Phantom, Chemist)
+	 * Checks if player is cursed (Mimic, Soulbound, SoulboundChosen, Phantom, Chemist)
 	 * @return true if player is cursed, false otherwise
 	 */
 	bool IsCursed();
