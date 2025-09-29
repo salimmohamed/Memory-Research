@@ -122,7 +122,7 @@ void ActorEntity::SetUp2()
 		printf("RootComponent: %p\n", RootComponent);
 		printf("CharacterNameId: %d\n", CharacterNameId);
 		printf("TerrorCosmetic: %d\n", TerrorCosmetic);
-		printf("PlayerRole: %d\n", PlayerRole);
+		printf("PlayerRole: %d (%s)\n", PlayerRole, GetRoleName().c_str());
 		printf("Position: %.2f, %.2f, %.2f\n", Position.x, Position.y, Position.z);
 		printf("CharacterName: %s\n", CharacterName.c_str());
 		printf("PlayerName: %s\n", PlayerName.c_str());
@@ -170,6 +170,46 @@ std::wstring ActorEntity::GetCursedRoleName()
 		return L"Chemist";
 	default:
 		return L"";
+	}
+}
+
+std::wstring ActorEntity::GetRoleName()
+{
+	switch (PlayerRole) {
+	case EPlayerRole::EDeceitRole__Human:
+		return L"Human";
+	case EPlayerRole::EDeceitRole__Terror:
+		return L"Terror";
+	case EPlayerRole::EDeceitRole__Medic:
+		return L"Medic";
+	case EPlayerRole::EDeceitRole__Warden:
+		return L"Warden";
+	case EPlayerRole::EDeceitRole__Inquisitor:
+		return L"Inquisitor";
+	case EPlayerRole::EDeceitRole__Mimic:
+		return L"Mimic";
+	case EPlayerRole::EDeceitRole__Vector:
+		return L"Vector";
+	case EPlayerRole::EDeceitRole__Seer:
+		return L"Seer";
+	case EPlayerRole::EDeceitRole__Purifier:
+		return L"Purifier";
+	case EPlayerRole::EDeceitRole__Medium:
+		return L"Medium";
+	case EPlayerRole::EDeceitRole__Chemist:
+		return L"Chemist";
+	case EPlayerRole::EDeceitRole__Soulbound:
+		return L"Soulbound";
+	case EPlayerRole::EDeceitRole__Phantom:
+		return L"Phantom";
+	case EPlayerRole::EDeceitRole__SoulboundChosen:
+		return L"SoulboundChosen";
+	case EPlayerRole::EDeceitRole__Observer:
+		return L"Observer";
+	case EPlayerRole::EDeceitRole__Invalid:
+		return L"Invalid";
+	default:
+		return L"Unknown";
 	}
 }
 

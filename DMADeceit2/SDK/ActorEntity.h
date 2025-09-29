@@ -172,6 +172,12 @@ public:
 	std::wstring GetCursedRoleName();
 
 	/**
+	 * Gets the player role name as string
+	 * @return Role name as wide string
+	 */
+	std::wstring GetRoleName();
+
+	/**
 	 * Gets the character ID
 	 * @return Character enum value
 	 */

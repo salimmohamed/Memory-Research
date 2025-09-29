@@ -108,8 +108,9 @@ void DrawPlayerEsp()
 		// Format distance string based on configuration
 		std::wstring wdistance = config.Distance ? L"[" + std::to_wstring((int)distance) + L"m]" : L"";
 		
-		// Get character name based on configuration
+		// Get character name and role name based on configuration
 		std::wstring name = config.Name ? entity->GetCharacterName() : L"";
+		std::wstring roleName = entity->GetRoleName();
 
 		// Skip if beyond maximum distance
 		if (distance > config.MaxDistance)
@@ -117,6 +118,7 @@ void DrawPlayerEsp()
 
 		// Render player information
 		DrawText(screenpos.x, screenpos.y, name + L":" + wdistance, "Verdana", config.FontSize, config.TextColour, CentreCentre);
-		DrawText(screenpos.x, screenpos.y + 80, entity->GetPlayerName(), "Verdana", config.FontSize, config.TextColour, CentreCentre);
+		DrawText(screenpos.x, screenpos.y + 20, roleName, "Verdana", config.FontSize, config.TextColour, CentreCentre);
+		DrawText(screenpos.x, screenpos.y + 40, entity->GetPlayerName(), "Verdana", config.FontSize, config.TextColour, CentreCentre);
 	}
 }
