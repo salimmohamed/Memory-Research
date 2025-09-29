@@ -1,19 +1,17 @@
 # TODO
 
-### Intelligent Game State Analyzer
+## Stuff to add eventually
 
-- [ ] **Phase 1: Communication Infrastructure**
-  - [ ] Create Python Agent Server
-  - [ ] C++ IPC Implementation
-- [ ] **Phase 2: Data Structures**
-  - [ ] Game State Representation
-  - [ ] AI Analysis Response
-- [ ] **Phase 3: AI Agent Features**
-  - [ ] Pattern Recognition System
-  - [ ] Predictive Analysis
-  - [ ] Strategic Recommendations
-  - [ ] Anomaly Detection
-- [ ] **Phase 4: Integration**
-  - [ ] Update Main Loop (Main.cpp)
-  - [ ] Enhanced ESP Display
-  - [ ] GUI Integration
+- [ ] Python agent for game analysis
+- [ ] Better ESP rendering (maybe add distance-based fading)
+- [ ] Config file validation
+- [ ] Memory reading optimizations
+- [ ] Anti-detection improvements
+- [ ] GUI polish (the current one is pretty basic)
+
+## Maybe someday
+
+- [ ] Pattern recognition for player behavior
+- [ ] Predictive analysis (probably overkill)
+- [ ] Better error handling throughout
+- [ ] Performance profiling tools

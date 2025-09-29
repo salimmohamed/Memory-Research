@@ -1,70 +1,45 @@
-# DMA Memory Analysis Project
+# Deceit 2 DMA Memory Reader
 
-## Overview
-This project serves as an educational platform for learning about memory analysis, cybersecurity, and system architecture. It provides hands-on experience with Direct Memory Access (DMA) techniques and memory manipulation concepts in a controlled environment.
+A C++ project for reading game memory using Direct Memory Access (DMA) techniques. Originally built for educational purposes to understand memory analysis and system architecture.
 
-## Educational Focus
-This project is designed to:
-- Understand memory management and system architecture
-- Learn about DMA techniques and their applications
-- Develop skills in memory analysis and debugging
-- Practice ethical cybersecurity principles
-- Gain experience with low-level system interactions
+## What's in here
 
-## Technical Skills Developed
-- Memory analysis and debugging
-- System architecture understanding
-- DMA implementation and management
-- Cybersecurity best practices
-- Ethical hacking methodologies
-- System security assessment
-
-## Project Structure
 ```
-.
-├── Build/          # Build output directory
-├── DMADeceit2/     # Main project source code
-├── Include/        # Header files
-├── Lib/           # Library dependencies
-└── Images/        # Project documentation images
+DMADeceit2/     # Main C++ source
+├── Config/     # Configuration handling
+├── ESP/        # ESP rendering code  
+├── Graphics/   # UI components and drawing
+├── Memory/     # Memory reading utilities
+├── SDK/        # Game-specific structures
+└── Security/   # Anti-detection stuff
+
+Include/        # External headers (json, leechcore, etc.)
+Lib/           # Static libraries
+Build/         # Compiled output
 ```
 
-## Learning Objectives
-1. **Memory Analysis**: Understanding how memory is structured and accessed
-2. **System Security**: Learning about memory protection mechanisms
-3. **Debugging Skills**: Developing advanced debugging techniques
-4. **Ethical Practices**: Implementing security testing in an ethical manner
-5. **System Architecture**: Understanding low-level system interactions
+See [TODO.md](TODO.md) for what's planned next.
 
-## Future Development
-For a detailed roadmap of planned features and ongoing development, please see our [TODO.md](TODO.md) file.
+## Building
 
-## Disclaimer
-This project is intended for educational purposes only. It demonstrates concepts related to memory analysis and system security. Users are expected to:
-- Use this knowledge responsibly
-- Follow ethical guidelines
-- Respect system security
-- Not use these techniques for malicious purposes
+Requires Visual Studio 2019+ with C++17 support. The project uses:
+- PCILeech for DMA access
+- DirectX for rendering
+- JSON for config files
 
-## License
-This project is licensed under the terms specified in the LICENSE file. All users must comply with the license terms and use the project responsibly.
+Just open `DMADeceit2.sln` and build. Make sure you have the required hardware for DMA (FPGA board or similar).
 
-## Contributing
-Contributions are welcome! Please ensure that:
-- All contributions align with the educational purpose
-- Code follows ethical guidelines
-- Documentation is clear and educational
-- Security best practices are maintained
+## ⚠️ Important
 
-## Note
-This project is part of a cybersecurity learning journey. It's designed to help understand system security concepts and develop skills in memory analysis while maintaining ethical standards in cybersecurity practices.
+This is for educational purposes only. Don't use this on games you don't own or in ways that violate terms of service. The techniques here are useful for understanding memory analysis and system security, but use them responsibly.
 
 ## Credits
-This project is based on and inspired by the original work from [ProbablyXS/deceit_2_dma](https://github.com/ProbablyXS/deceit_2_dma). The following libraries and resources were used in the development:
 
-* [PCILeech](https://github.com/ufrisk/pcileech) - Memory acquisition and analysis framework
-* [MemProcFS](https://github.com/ufrisk/MemProcFS) - Memory process file system
-* [UnnamedZ03](https://github.com/UnnamedZ03/DBD-external-base) - External memory reading base
-* [DMALibrary](https://github.com/Metick/DMALibrary/tree/Master) - DMA implementation library
+Forked from [ProbablyXS/deceit_2_dma](https://github.com/ProbablyXS/deceit_2_dma). Uses:
 
-This project has been adapted for educational purposes to demonstrate memory analysis and cybersecurity concepts.
+- [PCILeech](https://github.com/ufrisk/pcileech) - The DMA magic happens here
+- [MemProcFS](https://github.com/ufrisk/MemProcFS) - Memory process file system  
+- [UnnamedZ03/DBD-external-base](https://github.com/UnnamedZ03/DBD-external-base) - External memory reading patterns
+- [DMALibrary](https://github.com/Metick/DMALibrary) - DMA implementation helpers
+
+Thanks to the original authors for the solid foundation.
